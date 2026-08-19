@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How It Works | ZionFlow</title>
+
+  <meta name="description" content="See how ZionFlow's simple remote-support process helps real-estate professionals organize, delegate and streamline their workflow.">
+
+  <style>
+    :root {
+      --navy: #17243d;
+      --navy-dark: #0d1729;
+      --gold: #c9a94a;
+      --cream: #f7f3e9;
+      --white: #ffffff;
+      --text: #263044;
+      --muted: #697386;
+      --border: #dedbd2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247,243,233,.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--navy);
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 12px 18px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      background: var(--navy);
+      padding: 110px 0;
+      color: white;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: clamp(44px, 7vw, 70px);
+      max-width: 850px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #d9dfeb;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .intro {
+      background: white;
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: var(--navy);
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .steps-section {
+      background: var(--cream);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+      margin-top: 55px;
+    }
+
+    .step {
+      background: white;
+      padding: 32px 25px;
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 8px 25px rgba(13,23,41,.06);
+    }
+
+    .number {
+      font-family: Georgia, serif;
+      color: var(--gold);
+      font-size: 46px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      color: var(--navy);
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .explanation {
+      background: var(--navy);
+      color: white;
+    }
+
+    .explanation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .explanation h2 {
+      color: white;
+      font-size: 45px;
+      margin-bottom: 25px;
+    }
+
+    .explanation p {
+      color: #d3d9e4;
+      margin-bottom: 18px;
+    }
+
+    .principles {
+      display: grid;
+      gap: 15px;
+    }
+
+    .principle {
+      border: 1px solid rgba(201,169,74,.35);
+      padding: 22px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .principle strong {
+      display: block;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .principle span {
+      color: #cbd2df;
+      font-size: 14px;
+    }
+
+    .cta {
+      background: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: var(--navy);
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #080f1d;
+      color: #cbd2df;
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 40px;
+    }
+
+    footer .logo {
+      color: white;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    footer h3 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .explanation-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, 1120px);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      Zion<span>Flow</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html" class="nav-cta">Book a Consultation</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">The Process</div>
+
+    <h1>A Simple System. A Smoother Workflow.</h1>
+
+    <p>
+      Getting remote support shouldn't create more work for you. ZionFlow's
+      process is designed to make delegation clear, organized and easy.
+    </p>
+
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+
+    <div class="eyebrow">How We Work</div>
+
+    <h2>Support Without the Complexity</h2>
+
+    <p>
+      We take the time to understand your business, establish a clear workflow
+      and provide dependable support around the tasks you choose to delegate.
+    </p>
+
+  </div>
+</section>
+
+<section class="steps-section">
+  <div class="container">
+
+    <div class="eyebrow">Five Simple Steps</div>
+
+    <h2 style="color:var(--navy);font-size:45px;">
+      From First Conversation to Ongoing Support.
+    </h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="number">01</div>
+        <h3>Discover</h3>
+        <p>
+          We learn about your business, your workflow and the tasks that are
+          taking the most time.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="number">02</div>
+        <h3>Onboard</h3>
+        <p>
+          We establish your preferred systems, processes and communication
+          expectations.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="number">03</div>
+        <h3>Support</h3>
+        <p>
+          We begin handling the agreed administrative and support tasks.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="number">04</div>
+        <h3>Track</h3>
+        <p>
+          Tasks, priorities and outstanding work remain organized and visible.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="number">05</div>
+        <h3>Report</h3>
+        <p>
+          You receive clear updates on completed work and ongoing priorities.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="explanation">
+  <div class="container explanation-grid">
+
+    <div>
+
+      <div class="eyebrow">Built Around You</div>
+
+      <h2>Remote Support That Fits Your Business.</h2>
+
+      <p>
+        ZionFlow doesn't expect you to completely change the way you work.
+        Instead, we build our support around the systems and processes you
+        already use.
+      </p>
+
+      <p>
+        The objective is simple: reduce the administrative load while keeping
+        you informed and in control.
+      </p>
+
+    </div>
+
+    <div class="principles">
+
+      <div class="principle">
+        <strong>Clear Communication</strong>
+        <span>Know what needs to happen and where things stand.</span>
+      </div>
+
+      <div class="principle">
+        <strong>Reliable Support</strong>
+        <span>Consistent assistance with agreed responsibilities.</span>
+      </div>
+
+      <div class="principle">
+        <strong>Organized Workflows</strong>
+        <span>Keep tasks, information and priorities structured.</span>
+      </div>
+
+      <div class="principle">
+        <strong>Flexible Service</strong>
+        <span>Support that can adapt as your business develops.</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+
+  <div class="container">
+
+    <div class="eyebrow">Get Started</div>
+
+    <h2>Ready to Simplify Your Workflow?</h2>
+
+    <p>
+      Let's talk about the tasks you want to delegate and how ZionFlow can
+      support your business.
+    </p>
+
+    <a href="contact.html" class="btn">
+      Book a Consultation
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <a href="index.html" class="logo">
+          Zion<span>Flow</span>
+        </a>
+
+        <div class="footer-tagline">
+          FAITH. SERVICE. EXCELLENCE.
+        </div>
+
+        <p>
+          Remote administrative and lead-support services for real-estate
+          professionals across South Africa.
+        </p>
+      </div>
+
+      <div>
+        <h3>Navigation</h3>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+
+        <ul>
+          <li><a href="contact.html">Book a Consultation</a></li>
+          <li>South Africa | Remote Support</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 ZionFlow. All rights reserved.</span>
+      <span>Built on faith. Delivered with excellence.</span>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
