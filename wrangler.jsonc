@@ -1,9 +1,0 @@
-{
-  "name": "zionflow",
-  "compatibility_date": "2026-08-19",
-  "main": "_worker.js",
-  "assets": {
-    "directory": ".",
-    "binding": "ASSETS"
-  }
-}
