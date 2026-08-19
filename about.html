@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About ZionFlow | Remote Business Support</title>
+
+  <meta name="description" content="Learn about ZionFlow, a South African remote administrative and lead-support service built to help real-estate professionals operate more efficiently.">
+
+  <style>
+    :root {
+      --navy: #17243d;
+      --navy-dark: #0d1729;
+      --gold: #c9a94a;
+      --cream: #f7f3e9;
+      --white: #ffffff;
+      --text: #263044;
+      --muted: #697386;
+      --border: #dedbd2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247,243,233,.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--navy);
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy-dark) !important;
+      padding: 12px 18px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      background: var(--navy);
+      color: white;
+      padding: 110px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: clamp(44px, 7vw, 70px);
+      max-width: 850px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: #d9dfeb;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .story {
+      background: white;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .story h2 {
+      color: var(--navy);
+      font-size: 45px;
+      margin-bottom: 25px;
+    }
+
+    .story p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .quote-box {
+      background: var(--navy);
+      color: white;
+      padding: 45px;
+      border-left: 5px solid var(--gold);
+    }
+
+    .quote-box p {
+      color: #e1e5ed;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      line-height: 1.45;
+    }
+
+    .values {
+      background: var(--cream);
+    }
+
+    .values-header {
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .values-header h2 {
+      color: var(--navy);
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .values-header p {
+      color: var(--muted);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .value {
+      background: white;
+      padding: 35px 30px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .value h3 {
+      color: var(--navy);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .value p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .difference {
+      background: var(--navy);
+      color: white;
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .difference h2 {
+      color: white;
+      font-size: 45px;
+      margin-bottom: 25px;
+    }
+
+    .difference p {
+      color: #d4dbe6;
+      margin-bottom: 18px;
+    }
+
+    .points {
+      display: grid;
+      gap: 15px;
+    }
+
+    .point {
+      padding: 22px;
+      border: 1px solid rgba(201,169,74,.35);
+    }
+
+    .point strong {
+      color: white;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .point span {
+      color: #cbd2df;
+      font-size: 14px;
+    }
+
+    .cta {
+      background: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: var(--navy);
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #080f1d;
+      color: #cbd2df;
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 40px;
+    }
+
+    footer .logo {
+      color: white;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    footer h3 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .story-grid,
+      .difference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, 1120px);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+
+      .quote-box {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      Zion<span>Flow</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html" class="nav-cta">Book a Consultation</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">About ZionFlow</div>
+
+    <h1>Built to Help Professionals Focus on What Matters.</h1>
+
+    <p>
+      ZionFlow provides remote administrative and lead-support services
+      designed to help real-estate professionals spend less time on
+      repetitive operational tasks and more time on their business.
+    </p>
+
+  </div>
+</section>
+
+<section class="story">
+
+  <div class="container story-grid">
+
+    <div>
+
+      <div class="eyebrow">Our Approach</div>
+
+      <h2>Support That Works Behind the Scenes.</h2>
+
+      <p>
+        Running a real-estate business involves more than meetings and
+        property transactions. There are enquiries to organize, information
+        to manage, follow-ups to coordinate and administrative tasks that
+        constantly compete for attention.
+      </p>
+
+      <p>
+        ZionFlow was created to provide dependable remote support around
+        those responsibilities.
+      </p>
+
+      <p>
+        Our approach is practical: understand how you work, establish a clear
+        process and consistently handle the responsibilities that have been
+        delegated to us.
+      </p>
+
+    </div>
+
+    <div class="quote-box">
+
+      <p>
+        “Your time should be spent growing relationships and building your
+        business — not getting buried in administration.”
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="values">
+
+  <div class="container">
+
+    <div class="values-header">
+
+      <div class="eyebrow">What We Stand For</div>
+
+      <h2>Simple Principles. Professional Service.</h2>
+
+      <p>
+        Every ZionFlow engagement is built around clear communication,
+        dependable execution and respect for the way each business operates.
+      </p>
+
+    </div>
+
+    <div class="value-grid">
+
+      <div class="value">
+        <h3>Reliability</h3>
+        <p>
+          We believe support should be dependable. Clear responsibilities and
+          consistent communication help keep work moving.
+        </p>
+      </div>
+
+      <div class="value">
+        <h3>Professionalism</h3>
+        <p>
+          Every interaction matters. We approach administrative and lead
+          support with care, accuracy and professionalism.
+        </p>
+      </div>
+
+      <div class="value">
+        <h3>Integrity</h3>
+        <p>
+          We value honest communication, responsible handling of information
+          and doing what we say we will do.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="difference">
+
+  <div class="container difference-grid">
+
+    <div>
+
+      <div class="eyebrow">The ZionFlow Difference</div>
+
+      <h2>Not Another Complicated System.</h2>
+
+      <p>
+        ZionFlow is designed to complement your existing business rather than
+        force you into unnecessary processes.
+      </p>
+
+      <p>
+        We focus on practical remote support that can be integrated into your
+        current workflow.
+      </p>
+
+    </div>
+
+    <div class="points">
+
+      <div class="point">
+        <strong>Remote by Design</strong>
+        <span>Professional support without requiring additional office space.</span>
+      </div>
+
+      <div class="point">
+        <strong>Built Around Your Workflow</strong>
+        <span>We adapt our support to the systems you already use.</span>
+      </div>
+
+      <div class="point">
+        <strong>Clear Scope</strong>
+        <span>Agreed responsibilities help keep expectations straightforward.</span>
+      </div>
+
+      <div class="point">
+        <strong>South African Focus</strong>
+        <span>Remote support designed for professionals operating in South Africa.</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <div class="container">
+
+    <div class="eyebrow">Let's Talk</div>
+
+    <h2>Could ZionFlow Support Your Business?</h2>
+
+    <p>
+      Tell us where your workflow needs support and let's explore whether
+      ZionFlow is the right fit.
+    </p>
+
+    <a href="contact.html" class="btn">
+      Book a Consultation
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <a href="index.html" class="logo">
+          Zion<span>Flow</span>
+        </a>
+
+        <div class="footer-tagline">
+          FAITH. SERVICE. EXCELLENCE.
+        </div>
+
+        <p>
+          Remote administrative and lead-support services for real-estate
+          professionals across South Africa.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3>Navigation</h3>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+
+      <div>
+
+        <h3>Contact</h3>
+
+        <ul>
+          <li><a href="contact.html">Book a Consultation</a></li>
+          <li>South Africa | Remote Support</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 ZionFlow. All rights reserved.</span>
+      <span>Built on faith. Delivered with excellence.</span>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
