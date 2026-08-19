@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ZionFlow | Remote Support for Real Estate Professionals</title>
+
+  <meta name="description" content="ZionFlow provides dependable remote administrative and lead-support services for real-estate professionals across South Africa.">
+
+  <meta property="og:title" content="ZionFlow | Remote Support for Real Estate Professionals">
+  <meta property="og:description" content="Remote administrative and lead-support services designed to keep your real estate business moving.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --navy: #17243d;
+      --navy-dark: #0d1729;
+      --gold: #c9a94a;
+      --cream: #f7f3e9;
+      --white: #ffffff;
+      --text: #263044;
+      --muted: #697386;
+      --border: #dedbd2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 243, 233, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 12px 18px;
+      border-radius: 4px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(13, 23, 41, 0.78), rgba(13, 23, 41, 0.82)),
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 100px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid rgba(201, 169, 74, 0.7);
+      color: #ead78e;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: clamp(44px, 7vw, 76px);
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 18px;
+      color: #e9edf4;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.7);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--navy);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .section-heading {
+      font-size: clamp(34px, 5vw, 50px);
+      margin-bottom: 22px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* CHALLENGE */
+
+    .challenge {
+      background: var(--white);
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .challenge p {
+      margin-bottom: 20px;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--gold);
+      padding: 18px 24px;
+      margin-top: 25px;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: var(--navy);
+    }
+
+    .image-card {
+      min-height: 420px;
+      border-radius: 6px;
+      background:
+        linear-gradient(rgba(23,36,61,.15), rgba(23,36,61,.15)),
+        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: var(--cream);
+    }
+
+    .services-header {
+      margin-bottom: 50px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border-top: 3px solid var(--gold);
+      padding: 32px;
+      min-height: 220px;
+      box-shadow: 0 8px 30px rgba(13,23,41,.06);
+      transition: .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom
