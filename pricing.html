@@ -23,7 +23,10 @@
       --text: #263044;
       --muted: #697386;
       --border: #dedbd2;
-      --green: #25d366;
+
+      /* Yoco-style payment blue */
+      --yoco-blue: #2F80ED;
+      --yoco-blue-dark: #256dcc;
     }
 
     * {
@@ -431,7 +434,7 @@
     }
 
     /* =========================
-       YOCO SECURE PAYMENTS
+       YOCO PAYMENT
     ========================= */
 
     .yoco-payment {
@@ -450,13 +453,19 @@
     }
 
     .yoco-badge {
-      display: inline-block;
-      margin-bottom: 15px;
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 2px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      background: var(--yoco-blue);
+      color: var(--white);
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      box-shadow: 0 5px 14px rgba(47, 128, 237, 0.18);
     }
 
     .yoco-card h2 {
@@ -472,20 +481,40 @@
     }
 
     .yoco-btn {
-      display: inline-block;
-      background: var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--yoco-blue);
       color: var(--white);
-      padding: 15px 30px;
-      border-radius: 4px;
-      font-weight: bold;
+      padding: 15px 28px;
+      border-radius: 7px;
+      font-weight: 700;
       font-size: 15px;
-      transition: 0.2s ease;
+      border: 2px solid var(--yoco-blue);
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 20px rgba(47, 128, 237, 0.20);
     }
 
     .yoco-btn:hover {
+      background: var(--yoco-blue-dark);
+      border-color: var(--yoco-blue-dark);
+      color: var(--white);
       transform: translateY(-3px);
-      filter: brightness(0.95);
-      box-shadow: 0 8px 20px rgba(13, 23, 41, 0.12);
+      box-shadow: 0 10px 25px rgba(47, 128, 237, 0.28);
+    }
+
+    .yoco-btn .button-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      color: var(--yoco-blue);
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
 
     .yoco-note {
@@ -1154,6 +1183,7 @@
         rel="noopener noreferrer"
         class="yoco-btn"
       >
+        <span class="button-badge">YOCO</span>
         Pay Securely with Yoco →
       </a>
 
