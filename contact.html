@@ -7,7 +7,7 @@
 
   <title>Contact ZionFlow | Real Estate Support</title>
 
-  <meta name="description" content="Contact ZionFlow for remote administrative, lead management and real estate support services across South Africa.">
+  <meta name="description" content="Contact ZionFlow for real estate administration, rental support and property operations services.">
 
   <style>
     :root {
@@ -19,12 +19,17 @@
       --text: #263044;
       --muted: #697386;
       --border: #dedbd2;
+      --green: #25d366;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -34,37 +39,45 @@
       line-height: 1.7;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: Georgia, "Times New Roman", serif;
       color: var(--navy);
-      line-height: 1.2;
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      width: min(1100px, calc(100% - 40px));
+      width: min(1120px, calc(100% - 40px));
       margin: auto;
     }
 
+    /* HEADER */
+
     header {
-      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 243, 233, 0.97);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
     .nav {
-      min-height: 75px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 30px;
     }
 
     .logo {
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 28px;
       font-weight: bold;
       color: var(--navy);
@@ -76,14 +89,14 @@
 
     .nav-links {
       display: flex;
-      list-style: none;
-      gap: 25px;
       align-items: center;
+      gap: 24px;
+      list-style: none;
     }
 
     .nav-links a {
       font-size: 14px;
-      font-weight: bold;
+      font-weight: 600;
       color: var(--navy);
     }
 
@@ -93,18 +106,27 @@
 
     .nav-cta {
       background: var(--gold);
-      padding: 11px 18px;
+      padding: 12px 18px;
       border-radius: 4px;
     }
 
+    /* HERO */
+
     .hero {
-      background: var(--navy-dark);
+      background:
+        linear-gradient(
+          rgba(13, 23, 41, 0.90),
+          rgba(13, 23, 41, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
       color: white;
-      padding: 95px 0;
+      padding: 100px 20px;
+      text-align: center;
     }
 
     .eyebrow {
-      color: #ead78e;
+      color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 12px;
@@ -114,160 +136,213 @@
 
     .hero h1 {
       color: white;
-      font-size: clamp(42px, 7vw, 70px);
-      max-width: 750px;
-      margin-bottom: 25px;
+      font-size: clamp(44px, 7vw, 68px);
+      margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 650px;
+      max-width: 700px;
+      margin: auto;
+      color: #e9edf4;
       font-size: 18px;
-      color: #e5e9f0;
     }
+
+    /* CONTACT */
 
     .contact-section {
       padding: 90px 0;
-      background: var(--white);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 70px;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
       align-items: start;
     }
 
     .contact-info h2 {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 20px;
     }
 
     .contact-info > p {
       color: var(--muted);
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
-    .contact-item {
-      margin-bottom: 25px;
+    .info-card {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      padding: 25px;
+      margin-bottom: 18px;
     }
 
-    .contact-item strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 4px;
+    .info-card h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
     }
 
-    .contact-item a {
+    .info-card p {
       color: var(--muted);
+      font-size: 14px;
     }
 
-    .contact-item a:hover {
-      color: var(--gold);
-    }
+    /* FORM */
 
-    .contact-form {
-      background: var(--cream);
+    .form-card {
+      background: var(--white);
       padding: 40px;
-      border-top: 4px solid var(--gold);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 40px rgba(13, 23, 41, 0.08);
     }
 
-    .contact-form h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
+    .form-card h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      margin-bottom: 20px;
     }
 
     label {
       display: block;
+      font-size: 13px;
       font-weight: bold;
       color: var(--navy);
       margin-bottom: 7px;
-      font-size: 14px;
     }
 
     input,
-    textarea,
-    select {
-      width: 100%;
-      border: 1px solid var(--border);
-      background: white;
-      padding: 14px;
-      margin-bottom: 20px;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      border-radius: 3px;
-      color: var(--text);
-    }
-
+    select,
     textarea {
-      min-height: 150px;
-      resize: vertical;
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      outline: none;
     }
 
     input:focus,
-    textarea:focus,
-    select:focus {
-      outline: 2px solid rgba(201, 169, 74, 0.35);
+    select:focus,
+    textarea:focus {
       border-color: var(--gold);
     }
 
-    button {
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
       border: none;
-      background: var(--gold);
-      color: var(--navy-dark);
-      padding: 15px 25px;
-      font-weight: bold;
-      font-size: 15px;
       cursor: pointer;
+      background: var(--green);
+      color: white;
+      padding: 16px 24px;
       border-radius: 4px;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.2s;
     }
 
-    button:hover {
+    .submit-btn:hover {
       transform: translateY(-2px);
+      filter: brightness(0.95);
     }
 
-    .note {
-      margin-top: 15px;
+    .privacy-note {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 11px;
+      text-align: center;
+      margin-top: 12px;
     }
 
-    footer {
-      background: var(--navy-dark);
-      color: #dfe4ed;
-      padding: 35px 0;
+    /* WHATSAPP */
+
+    .whatsapp-box {
+      background: var(--navy);
+      color: white;
+      padding: 35px;
+      margin-top: 60px;
       text-align: center;
     }
 
-    footer strong {
+    .whatsapp-box h2 {
       color: white;
-      font-family: Georgia, serif;
-      font-size: 20px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    footer p {
-      margin-top: 8px;
-      font-size: 13px;
-      color: #aeb7c7;
+    .whatsapp-box p {
+      color: #dce2ec;
+      margin-bottom: 20px;
     }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--navy-dark);
+      color: #dce2ec;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    /* MOBILE */
 
     @media (max-width: 800px) {
       .nav {
-        padding: 15px 0;
         flex-direction: column;
+        padding: 18px 0;
       }
 
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 14px;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
       }
 
-      .contact-form {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .form-card {
         padding: 25px;
       }
     }
@@ -283,133 +358,379 @@
       Zion<span>Flow</span>
     </a>
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="how-it-works.html">How It Works</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      </ul>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
 
   </div>
 </header>
 
-<main>
 
-  <section class="hero">
-    <div class="container">
+<!-- HERO -->
 
-      <div class="eyebrow">Let's work together</div>
+<section class="hero">
 
-      <h1>
-        Keep your real estate business moving.
-      </h1>
+  <div class="container">
 
-      <p>
-        Tell us what you need help with and we'll explore how ZionFlow
-        can support your business remotely.
-      </p>
-
+    <div class="eyebrow">
+      Start a Conversation
     </div>
-  </section>
 
-  <section class="contact-section">
-    <div class="container contact-grid">
+    <h1>
+      Let's Talk About Your Property Business.
+    </h1>
+
+    <p>
+      Tell us what you need help with and we'll get back to you
+      with the next steps.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <!-- INFORMATION -->
 
       <div class="contact-info">
 
-        <h2>Let's talk.</h2>
+        <div class="eyebrow">
+          Get In Touch
+        </div>
+
+        <h2>
+          Tell us where you need support.
+        </h2>
 
         <p>
-          Whether you need help managing leads, handling administration,
-          following up with clients or keeping your day-to-day operations
-          organised, ZionFlow is here to help.
+          Whether you're an estate agent looking for administrative
+          support, a landlord managing rentals or a property owner
+          building a portfolio, we'd like to understand your operation.
         </p>
 
-        <div class="contact-item">
-          <strong>Email</strong>
-          <a href="mailto:hello@zionflow.co.za">
-            hello@zionflow.co.za
-          </a>
+
+        <div class="info-card">
+
+          <h3>Estate Agents</h3>
+
+          <p>
+            Need help with leads, listings, follow-ups or administration?
+            Let's talk.
+          </p>
+
         </div>
 
-        <div class="contact-item">
-          <strong>Location</strong>
-          <span>South Africa</span>
+
+        <div class="info-card">
+
+          <h3>Landlords</h3>
+
+          <p>
+            Need help keeping rental administration and tenant
+            communication organised?
+          </p>
+
         </div>
 
-        <div class="contact-item">
-          <strong>Service Area</strong>
-          <span>Remote support across South Africa</span>
+
+        <div class="info-card">
+
+          <h3>Property Portfolios</h3>
+
+          <p>
+            Managing multiple properties? We can discuss a support
+            structure that fits your workload.
+          </p>
+
         </div>
 
       </div>
 
-      <div class="contact-form">
 
-        <h2>Send an enquiry</h2>
+      <!-- FORM -->
 
-        <form action="mailto:hello@zionflow.co.za"
-              method="post"
-              enctype="text/plain">
+      <div class="form-card">
 
-          <label for="name">Full Name</label>
-          <input
-            type="text"
-            id="name"
-            name="Name"
-            placeholder="Your full name"
-            required
+        <h2>
+          Request a Consultation
+        </h2>
+
+        <p class="form-intro">
+          Complete the form below. When you submit it, WhatsApp will
+          open with your enquiry ready to send to ZionFlow.
+        </p>
+
+
+        <form id="contactForm">
+
+          <div class="form-row">
+
+            <div class="field">
+
+              <label for="name">
+                Full Name *
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                placeholder="Your full name"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="business">
+                Business / Company
+              </label>
+
+              <input
+                type="text"
+                id="business"
+                placeholder="Business name"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="field">
+
+              <label for="email">
+                Email Address *
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="phone">
+                Phone / WhatsApp *
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Your number"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="field">
+
+              <label for="type">
+                I am a... *
+              </label>
+
+              <select id="type" required>
+
+                <option value="">
+                  Select one
+                </option>
+
+                <option value="Estate Agent">
+                  Estate Agent
+                </option>
+
+                <option value="Landlord">
+                  Landlord
+                </option>
+
+                <option value="Property Investor">
+                  Property Investor
+                </option>
+
+                <option value="Property Business">
+                  Property Business
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="properties">
+                Number of Properties
+              </label>
+
+              <select id="properties">
+
+                <option value="">
+                  Select one
+                </option>
+
+                <option value="1">
+                  1
+                </option>
+
+                <option value="2-5">
+                  2–5
+                </option>
+
+                <option value="6-10">
+                  6–10
+                </option>
+
+                <option value="11-25">
+                  11–25
+                </option>
+
+                <option value="26+">
+                  26+
+                </option>
+
+                <option value="Not applicable">
+                  Not applicable
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="service">
+              What support are you interested in? *
+            </label>
+
+            <select id="service" required>
+
+              <option value="">
+                Select a service
+              </option>
+
+              <option value="Real Estate Agent Support">
+                Real Estate Agent Support
+              </option>
+
+              <option value="Rental Administration">
+                Rental Administration
+              </option>
+
+              <option value="Tenant & Landlord Support">
+                Tenant & Landlord Support
+              </option>
+
+              <option value="Maintenance Coordination">
+                Maintenance Coordination
+              </option>
+
+              <option value="Property Operations">
+                Property Operations
+              </option>
+
+              <option value="Portfolio Support">
+                Portfolio Support
+              </option>
+
+              <option value="Not sure yet">
+                I'm not sure yet
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="budget">
+              Approximate Monthly Budget
+            </label>
+
+            <select id="budget">
+
+              <option value="">
+                Select one
+              </option>
+
+              <option value="R1,500 – R2,500">
+                R1,500 – R2,500
+              </option>
+
+              <option value="R2,500 – R5,000">
+                R2,500 – R5,000
+              </option>
+
+              <option value="R5,000+">
+                R5,000+
+              </option>
+
+              <option value="Not sure">
+                Not sure
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="message">
+              Tell us what you need help with *
+            </label>
+
+            <textarea
+              id="message"
+              placeholder="Tell us about your business, properties and the support you need..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit-btn"
           >
-
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="Email"
-            placeholder="you@example.com"
-            required
-          >
-
-          <label for="business">Business / Agency</label>
-          <input
-            type="text"
-            id="business"
-            name="Business"
-            placeholder="Your business or agency"
-          >
-
-          <label for="service">What do you need help with?</label>
-
-          <select id="service" name="Service">
-            <option value="">Select a service</option>
-            <option>Lead Management</option>
-            <option>Administrative Support</option>
-            <option>Client Communication</option>
-            <option>Property Listing Support</option>
-            <option>CRM & Database Management</option>
-            <option>General Real Estate Support</option>
-          </select>
-
-          <label for="message">Message</label>
-
-          <textarea
-            id="message"
-            name="Message"
-            placeholder="Tell us a little about what you need help with..."
-            required
-          ></textarea>
-
-          <button type="submit">
-            Send Enquiry
+            Send Enquiry via WhatsApp
           </button>
 
-          <p class="note">
-            Clicking "Send Enquiry" will open your email application
-            with your enquiry prepared.
+          <p class="privacy-note">
+            Your enquiry will open in WhatsApp before it is sent.
           </p>
 
         </form>
@@ -417,18 +738,153 @@
       </div>
 
     </div>
-  </section>
 
-</main>
+
+    <!-- DIRECT WHATSAPP -->
+
+    <div class="whatsapp-box">
+
+      <h2>
+        Prefer WhatsApp?
+      </h2>
+
+      <p>
+        You can contact ZionFlow directly.
+      </p>
+
+      <!-- CHANGE THE NUMBER BELOW -->
+
+      <a
+        href="https://wa.me/REPLACE_WITH_YOUR_NUMBER"
+        class="whatsapp-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        Chat on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 <footer>
-  <div class="container">
-    <strong>ZionFlow</strong>
-    <p>
-      Remote administrative and lead-support services for real estate professionals.
-    </p>
-  </div>
+
+  <p>
+    <strong>ZionFlow</strong> — Real Estate Operations & Support
+  </p>
+
+  <p>
+    Helping real-estate professionals stay organised, responsive and moving forward.
+  </p>
+
 </footer>
+
+
+<script>
+
+  /*
+    IMPORTANT:
+
+    Replace the number below with your WhatsApp number.
+
+    South African example:
+    27821234567
+
+    Do NOT include:
+    +
+    spaces
+    brackets
+    dashes
+  */
+
+  const ZIONFLOW_WHATSAPP = "27671140936";
+
+
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const business =
+        document.getElementById("business").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      const type =
+        document.getElementById("type").value;
+
+      const properties =
+        document.getElementById("properties").value;
+
+      const service =
+        document.getElementById("service").value;
+
+      const budget =
+        document.getElementById("budget").value;
+
+      const message =
+        document.getElementById("message").value.trim();
+
+
+      const whatsappMessage =
+`Hello ZionFlow,
+
+I'd like to enquire about your services.
+
+Name: ${name}
+Business: ${business || "Not provided"}
+Email: ${email}
+Phone / WhatsApp: ${phone}
+
+I am a: ${type}
+Number of properties: ${properties || "Not provided"}
+
+Service required: ${service}
+Approximate budget: ${budget || "Not provided"}
+
+Message:
+${message}`;
+
+
+      if (
+        !ZIONFLOW_WHATSAPP ||
+        ZIONFLOW_WHATSAPP === "27671140936"
+      ) {
+
+        alert(
+          "Please configure the ZionFlow WhatsApp number before using the form."
+        );
+
+        return;
+      }
+
+
+      const whatsappURL =
+        "https://wa.me/" +
+        ZIONFLOW_WHATSAPP +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    });
+
+</script>
 
 </body>
 </html>
