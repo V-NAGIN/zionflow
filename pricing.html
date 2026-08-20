@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
@@ -430,6 +431,71 @@
     }
 
     /* =========================
+       YOCO SECURE PAYMENTS
+    ========================= */
+
+    .yoco-payment {
+      padding: 85px 0;
+      background: var(--cream);
+    }
+
+    .yoco-card {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 55px 45px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 15px 45px rgba(13, 23, 41, 0.08);
+    }
+
+    .yoco-badge {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .yoco-card h2 {
+      font-size: clamp(34px, 5vw, 48px);
+      margin-bottom: 18px;
+    }
+
+    .yoco-card > p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .yoco-btn {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 15px 30px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .yoco-btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(0.95);
+      box-shadow: 0 8px 20px rgba(13, 23, 41, 0.12);
+    }
+
+    .yoco-note {
+      margin-top: 18px !important;
+      margin-bottom: 0 !important;
+      font-size: 12px !important;
+      color: var(--muted);
+    }
+
+    /* =========================
        CTA
     ========================= */
 
@@ -535,6 +601,7 @@
       .included,
       .custom-section,
       .terms,
+      .yoco-payment,
       .cta {
         padding: 70px 0;
       }
@@ -545,6 +612,14 @@
 
       .included-box {
         padding: 30px;
+      }
+
+      .yoco-card {
+        padding: 40px 22px;
+      }
+
+      .yoco-btn {
+        width: 100%;
       }
 
     }
@@ -1051,6 +1126,50 @@
 </section>
 
 
+<!-- YOCO SECURE PAYMENTS -->
+
+<section class="yoco-payment">
+
+  <div class="container">
+
+    <div class="yoco-card">
+
+      <div class="yoco-badge">
+        Secure Online Payments
+      </div>
+
+      <h2>
+        Ready to Get Started?
+      </h2>
+
+      <p>
+        Once your service, package and scope of work have been
+        confirmed, you can make your payment securely online
+        through Yoco.
+      </p>
+
+      <a
+        href="https://pay.yoco.com/zionflow"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="yoco-btn"
+      >
+        Pay Securely with Yoco →
+      </a>
+
+      <p class="yoco-note">
+        Secure online payment processing powered by Yoco.
+        Please confirm your agreed package and payment amount
+        with ZionFlow before making payment.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 <!-- CTA -->
 
 <section class="cta">
@@ -1100,3 +1219,4 @@
 
 </body>
 </html>
+```
