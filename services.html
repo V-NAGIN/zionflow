@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ZionFlow | Real Estate & Rental Support</title>
+  <title>ZionFlow Services | Property & Real Estate Support</title>
 
-  <meta name="description" content="ZionFlow provides professional real estate administration, rental support, tenant coordination and property operations support across South Africa.">
+  <meta
+    name="description"
+    content="ZionFlow provides rental administration, tenant support, maintenance coordination, property operations and estate-agent administrative support."
+  >
 
   <style>
+
     :root {
       --navy: #17243d;
       --navy-dark: #0d1729;
@@ -18,6 +23,7 @@
       --text: #263044;
       --muted: #697386;
       --border: #dedbd2;
+      --green: #25d366;
     }
 
     * {
@@ -37,19 +43,21 @@
       line-height: 1.7;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: Georgia, "Times New Roman", serif;
-      color: var(--navy);
       line-height: 1.15;
+      color: var(--navy);
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       margin: auto;
     }
 
@@ -86,7 +94,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 24px;
       list-style: none;
     }
 
@@ -110,11 +118,13 @@
 
     .hero {
       background:
-        linear-gradient(rgba(13, 23, 41, 0.88), rgba(13, 23, 41, 0.92)),
-        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
+        linear-gradient(
+          rgba(13, 23, 41, 0.93),
+          rgba(13, 23, 41, 0.96)
+        );
+
       color: white;
-      padding: 110px 20px;
+      padding: 105px 20px;
       text-align: center;
     }
 
@@ -124,192 +134,221 @@
       letter-spacing: 2px;
       font-size: 12px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
     .hero h1 {
       color: white;
-      font-size: clamp(42px, 7vw, 70px);
-      max-width: 850px;
-      margin: 0 auto 22px;
+      font-size: clamp(44px, 7vw, 70px);
+      margin-bottom: 22px;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 760px;
       margin: auto;
-      color: #e9edf4;
+      color: #dce2ec;
       font-size: 18px;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 90px 0;
+      background: white;
+    }
+
+    .intro-content {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: clamp(34px, 5vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 17px;
     }
 
     /* SERVICES */
 
     .services {
-      padding: 95px 0;
+      padding: 90px 0;
     }
 
     .section-header {
-      max-width: 720px;
-      margin-bottom: 55px;
+      max-width: 760px;
+      margin-bottom: 50px;
     }
 
     .section-header h2 {
-      font-size: clamp(36px, 5vw, 52px);
-      margin-bottom: 20px;
+      font-size: clamp(34px, 5vw, 48px);
+      margin-bottom: 18px;
     }
 
     .section-header p {
       color: var(--muted);
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .service-card {
-      background: var(--white);
+      background: white;
       border-top: 4px solid var(--gold);
-      padding: 34px 30px;
-      min-height: 300px;
-      box-shadow: 0 8px 30px rgba(13, 23, 41, 0.06);
-      transition: 0.2s ease;
+      padding: 32px;
+      min-height: 270px;
+      box-shadow: 0 10px 35px rgba(13, 23, 41, 0.06);
+      transition: 0.2s;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(13, 23, 41, 0.10);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(13, 23, 41, 0.10);
     }
 
     .service-number {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 14px;
       color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 14px;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
     .service-card h3 {
       font-size: 25px;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     .service-card p {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
       margin-bottom: 20px;
     }
 
-    .service-card ul {
+    .service-list {
       list-style: none;
     }
 
-    .service-card li {
-      font-size: 14px;
-      padding: 5px 0;
+    .service-list li {
+      font-size: 13px;
+      padding: 6px 0;
     }
 
-    .service-card li::before {
+    .service-list li::before {
       content: "✓";
       color: var(--gold);
       font-weight: bold;
       margin-right: 8px;
     }
 
-    /* FEATURE */
+    /* FEATURED */
 
-    .feature {
+    .featured-section {
       background: var(--navy);
       color: white;
-      padding: 95px 0;
+      padding: 100px 0;
     }
 
-    .feature-grid {
+    .featured-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 70px;
       align-items: center;
     }
 
-    .feature h2 {
+    .featured-section h2 {
       color: white;
-      font-size: clamp(36px, 5vw, 52px);
-      margin-bottom: 22px;
-    }
-
-    .feature p {
-      color: #dce2ec;
+      font-size: clamp(35px, 5vw, 52px);
       margin-bottom: 20px;
-      font-size: 16px;
     }
 
-    .feature-list {
+    .featured-section p {
+      color: #dce2ec;
+      margin-bottom: 25px;
+    }
+
+    .featured-list {
       list-style: none;
     }
 
-    .feature-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,.12);
+    .featured-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
       color: #e9edf4;
     }
 
-    .feature-list li::before {
+    .featured-list li::before {
       content: "✓";
       color: var(--gold);
       font-weight: bold;
       margin-right: 10px;
     }
 
-    .feature-box {
-      background: var(--cream);
-      color: var(--text);
-      padding: 45px;
-      border-left: 5px solid var(--gold);
+    .featured-box {
+      border: 1px solid rgba(201,169,74,0.45);
+      padding: 40px;
+      background: rgba(255,255,255,0.04);
     }
 
-    .feature-box h3 {
-      font-size: 30px;
+    .featured-box h3 {
+      color: var(--gold);
+      font-size: 28px;
       margin-bottom: 15px;
     }
 
-    .feature-box p {
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy-dark);
-      padding: 14px 24px;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
+    .featured-box p {
+      font-size: 14px;
     }
 
     /* CTA */
 
     .cta {
+      padding: 90px 0;
+      background: var(--white);
       text-align: center;
-      padding: 100px 20px;
-      background: var(--cream);
     }
 
     .cta h2 {
-      font-size: clamp(36px, 5vw, 52px);
-      margin-bottom: 20px;
+      font-size: clamp(35px, 5vw, 50px);
+      margin-bottom: 18px;
     }
 
     .cta p {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 30px;
       color: var(--muted);
-      font-size: 17px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
     }
 
     /* FOOTER */
@@ -318,7 +357,7 @@
       background: var(--navy-dark);
       color: #dce2ec;
       text-align: center;
-      padding: 35px 20px;
+      padding: 40px 20px;
     }
 
     footer strong {
@@ -327,17 +366,20 @@
 
     /* MOBILE */
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
+
       .service-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .feature-grid {
+      .featured-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
+
       .nav {
         flex-direction: column;
         padding: 18px 0;
@@ -349,20 +391,45 @@
         gap: 14px;
       }
 
+    }
+
+    @media (max-width: 600px) {
+
       .service-grid {
         grid-template-columns: 1fr;
       }
 
-      .feature-box {
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .services,
+      .intro,
+      .cta {
+        padding: 70px 0;
+      }
+
+      .featured-section {
+        padding: 70px 0;
+      }
+
+      .featured-box {
         padding: 30px;
       }
+
     }
+
   </style>
+
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
   <div class="container nav">
 
     <a href="index.html" class="logo">
@@ -370,15 +437,37 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="how-it-works.html">How It Works</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="about.html">About</a>
+      </li>
+
+      <li>
+        <a href="services.html">Services</a>
+      </li>
+
+      <li>
+        <a href="how-it-works.html">How It Works</a>
+      </li>
+
+      <li>
+        <a href="pricing.html">Pricing</a>
+      </li>
+
+      <li>
+        <a href="contact.html" class="nav-cta">
+          Get Started
+        </a>
+      </li>
+
     </ul>
 
   </div>
+
 </header>
 
 
@@ -388,16 +477,18 @@
 
   <div class="container">
 
-    <div class="eyebrow">ZionFlow Services</div>
+    <div class="eyebrow">
+      What We Do
+    </div>
 
     <h1>
-      Real Estate Support That Keeps Your Business Moving.
+      Property Support Without The Overhead.
     </h1>
 
     <p>
-      From lead administration and client support to rental coordination
-      and property operations, ZionFlow helps keep the work behind your
-      properties organised and moving forward.
+      ZionFlow provides practical administrative and operational
+      support for estate agents, landlords, property investors
+      and growing property portfolios.
     </p>
 
   </div>
@@ -405,7 +496,38 @@
 </section>
 
 
-<!-- SERVICES -->
+<!-- INTRO -->
+
+<section class="intro">
+
+  <div class="container">
+
+    <div class="intro-content">
+
+      <div class="eyebrow">
+        One Support Partner
+      </div>
+
+      <h2>
+        Less administration. More time for business.
+      </h2>
+
+      <p>
+        Property businesses generate a constant stream of tasks:
+        enquiries, tenant communication, documents, maintenance
+        requests, follow-ups, inspections and reporting.
+        ZionFlow helps keep those operations organised so you can
+        focus on the bigger picture.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROPERTY OPERATIONS -->
 
 <section class="services">
 
@@ -413,15 +535,18 @@
 
     <div class="section-header">
 
-      <div class="eyebrow">What We Do</div>
+      <div class="eyebrow">
+        Rental & Property Operations
+      </div>
 
       <h2>
-        Practical support for the modern property professional.
+        Support for your rental operation.
       </h2>
 
       <p>
-        We take care of the administrative and operational workload
-        that can slow down agents, landlords and growing property portfolios.
+        Practical assistance for landlords, investors and property
+        businesses that need help keeping rental administration
+        organised.
       </p>
 
     </div>
@@ -429,140 +554,242 @@
 
     <div class="service-grid">
 
-      <!-- 01 -->
+
+      <!-- SERVICE 1 -->
 
       <div class="service-card">
 
-        <div class="service-number">01</div>
+        <div class="service-number">
+          01
+        </div>
 
-        <h3>Real Estate Agent Support</h3>
+        <h3>
+          Rental Administration
+        </h3>
 
         <p>
-          Give agents more time to focus on clients, listings and closing deals.
+          Keep rental information, documents and recurring
+          administrative tasks organised.
         </p>
 
-        <ul>
-          <li>Lead organisation</li>
-          <li>Lead follow-ups</li>
-          <li>CRM administration</li>
-          <li>Listing administration</li>
-          <li>Appointment coordination</li>
+        <ul class="service-list">
+
+          <li>
+            Rental records
+          </li>
+
+          <li>
+            Document organisation
+          </li>
+
+          <li>
+            Lease tracking
+          </li>
+
+          <li>
+            Administrative follow-ups
+          </li>
+
         </ul>
 
       </div>
 
 
-      <!-- 02 -->
+      <!-- SERVICE 2 -->
 
       <div class="service-card">
 
-        <div class="service-number">02</div>
+        <div class="service-number">
+          02
+        </div>
 
-        <h3>Rental Administration</h3>
+        <h3>
+          Tenant Support
+        </h3>
 
         <p>
-          Keep rental processes organised from enquiry through tenant onboarding.
+          Help keep communication with tenants clear,
+          organised and responsive.
         </p>
 
-        <ul>
-          <li>Rental enquiry support</li>
-          <li>Application administration</li>
-          <li>Document organisation</li>
-          <li>Lease administration support</li>
-          <li>Tenant onboarding coordination</li>
+        <ul class="service-list">
+
+          <li>
+            Tenant communication
+          </li>
+
+          <li>
+            Enquiry handling
+          </li>
+
+          <li>
+            Follow-ups
+          </li>
+
+          <li>
+            Communication records
+          </li>
+
         </ul>
 
       </div>
 
 
-      <!-- 03 -->
+      <!-- SERVICE 3 -->
 
       <div class="service-card">
 
-        <div class="service-number">03</div>
+        <div class="service-number">
+          03
+        </div>
 
-        <h3>Tenant & Landlord Support</h3>
+        <h3>
+          Maintenance Coordination
+        </h3>
 
         <p>
-          Maintain clear communication between property stakeholders.
+          Help coordinate maintenance requests between tenants,
+          owners and relevant service providers.
         </p>
 
-        <ul>
-          <li>Tenant communication</li>
-          <li>Landlord updates</li>
-          <li>Query management</li>
-          <li>Appointment scheduling</li>
-          <li>General administrative support</li>
+        <ul class="service-list">
+
+          <li>
+            Maintenance requests
+          </li>
+
+          <li>
+            Supplier communication
+          </li>
+
+          <li>
+            Appointment coordination
+          </li>
+
+          <li>
+            Status follow-ups
+          </li>
+
         </ul>
 
       </div>
 
 
-      <!-- 04 -->
+      <!-- SERVICE 4 -->
 
       <div class="service-card">
 
-        <div class="service-number">04</div>
+        <div class="service-number">
+          04
+        </div>
 
-        <h3>Maintenance Coordination</h3>
+        <h3>
+          Inspection Support
+        </h3>
 
         <p>
-          Keep maintenance requests documented, communicated and followed up.
+          Help keep property inspection administration and
+          scheduling organised.
         </p>
 
-        <ul>
-          <li>Maintenance request logging</li>
-          <li>Contractor communication</li>
-          <li>Appointment coordination</li>
-          <li>Progress tracking</li>
-          <li>Completion updates</li>
+        <ul class="service-list">
+
+          <li>
+            Inspection scheduling
+          </li>
+
+          <li>
+            Tenant coordination
+          </li>
+
+          <li>
+            Calendar management
+          </li>
+
+          <li>
+            Inspection records
+          </li>
+
         </ul>
 
       </div>
 
 
-      <!-- 05 -->
+      <!-- SERVICE 5 -->
 
       <div class="service-card">
 
-        <div class="service-number">05</div>
+        <div class="service-number">
+          05
+        </div>
 
-        <h3>Property Operations</h3>
+        <h3>
+          Property Reporting
+        </h3>
 
         <p>
-          Create organised systems for managing the day-to-day administration
-          around properties.
+          Turn property information into simple reports that
+          help owners understand their operation.
         </p>
 
-        <ul>
-          <li>Property records</li>
-          <li>Lease expiry tracking</li>
-          <li>Inspection scheduling</li>
-          <li>Maintenance tracking</li>
-          <li>Portfolio administration</li>
+        <ul class="service-list">
+
+          <li>
+            Monthly summaries
+          </li>
+
+          <li>
+            Vacancy tracking
+          </li>
+
+          <li>
+            Maintenance updates
+          </li>
+
+          <li>
+            Administrative reporting
+          </li>
+
         </ul>
 
       </div>
 
 
-      <!-- 06 -->
+      <!-- SERVICE 6 -->
 
       <div class="service-card">
 
-        <div class="service-number">06</div>
+        <div class="service-number">
+          06
+        </div>
 
-        <h3>Portfolio Support</h3>
+        <h3>
+          Portfolio Support
+        </h3>
 
         <p>
-          Structured administrative support for landlords and growing portfolios.
+          Centralise recurring administrative work across
+          multiple properties.
         </p>
 
-        <ul>
-          <li>Portfolio records</li>
-          <li>Regular reporting</li>
-          <li>Task tracking</li>
-          <li>Workflow coordination</li>
-          <li>Custom operational support</li>
+        <ul class="service-list">
+
+          <li>
+            Portfolio administration
+          </li>
+
+          <li>
+            Property records
+          </li>
+
+          <li>
+            Task tracking
+          </li>
+
+          <li>
+            Owner communication support
+          </li>
+
         </ul>
 
       </div>
@@ -574,56 +801,80 @@
 </section>
 
 
-<!-- FEATURE -->
+<!-- ESTATE AGENT SUPPORT -->
 
-<section class="feature">
+<section class="featured-section">
 
   <div class="container">
 
-    <div class="feature-grid">
+    <div class="featured-grid">
 
       <div>
 
-        <div class="eyebrow">Built Around Your Workflow</div>
+        <div class="eyebrow">
+          Estate Agent Support
+        </div>
 
         <h2>
-          You focus on the property. We help manage the work behind it.
+          Keep your agents focused on clients and deals.
         </h2>
 
         <p>
-          ZionFlow is designed to become an extension of your operation,
-          helping you stay organised without adding another full-time
-          administrative workload.
+          ZionFlow can take care of recurring administrative
+          and support tasks that consume valuable time.
         </p>
 
-        <ul class="feature-list">
-          <li>Clear communication</li>
-          <li>Organised property records</li>
-          <li>Reliable administrative support</li>
-          <li>Consistent follow-ups</li>
-          <li>Flexible monthly packages</li>
+        <ul class="featured-list">
+
+          <li>
+            Lead follow-ups
+          </li>
+
+          <li>
+            Listing administration
+          </li>
+
+          <li>
+            Client communication support
+          </li>
+
+          <li>
+            Appointment coordination
+          </li>
+
+          <li>
+            Database administration
+          </li>
+
+          <li>
+            Document organisation
+          </li>
+
+          <li>
+            General real-estate administration
+          </li>
+
         </ul>
 
       </div>
 
 
-      <div class="feature-box">
+      <div class="featured-box">
 
-        <h3>Growing your portfolio?</h3>
+        <h3>
+          Your workload doesn't have to grow with your business.
+        </h3>
 
         <p>
-          As your number of properties, tenants and administrative tasks
-          increases, your support requirements can change too.
+          Instead of immediately hiring another full-time employee,
+          use ZionFlow as an external support partner for the
+          administrative work that needs to get done.
         </p>
 
         <p>
-          We'll work with you to create a support structure that fits
-          your actual workload.
+          Start with a defined scope and increase your support
+          as your workload grows.
         </p>
-
-        <a href="contact.html" class="btn">
-          Discuss Your Needs
-        </a>
 
       </div>
 
@@ -640,37 +891,58 @@
 
   <div class="container">
 
-    <div class="eyebrow">Let's Work Together</div>
+    <div class="eyebrow">
+      Ready To Get Started?
+    </div>
 
     <h2>
-      Ready to make your property operations easier?
+      Let's build your support structure.
     </h2>
 
     <p>
-      Tell us what you're currently handling and where you need support.
-      We'll help you find the right ZionFlow service package.
+      Tell us about your properties, workload or real-estate
+      business and we'll discuss where ZionFlow can help.
     </p>
 
-    <a href="contact.html" class="btn">
-      Get Started
-    </a>
+    <div class="cta-buttons">
+
+      <a
+        href="contact.html"
+        class="btn btn-primary"
+      >
+        Request a Consultation
+      </a>
+
+      <a
+        href="pricing.html"
+        class="btn btn-dark"
+      >
+        View Pricing
+      </a>
+
+    </div>
 
   </div>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
   <p>
-    <strong>ZionFlow</strong> — Real Estate Operations & Support
+    <strong>ZionFlow</strong>
+    — Real Estate Operations & Support
   </p>
 
   <p>
-    Helping real-estate professionals stay organised, responsive and moving forward.
+    Helping real-estate professionals stay organised,
+    responsive and moving forward.
   </p>
 
 </footer>
+
 
 </body>
 </html>
