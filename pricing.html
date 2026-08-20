@@ -4,20 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ZionFlow | Pricing</title>
+  <title>ZionFlow Pricing | Real Estate & Rental Support</title>
 
-  <meta name="description" content="Flexible remote real-estate support, rental administration and property operations packages from ZionFlow.">
+  <meta
+    name="description"
+    content="Simple monthly support packages for estate agents, landlords and property portfolios."
+  >
 
   <style>
     :root {
       --navy: #17243d;
       --navy-dark: #0d1729;
       --gold: #c9a94a;
+      --gold-light: #ead78e;
       --cream: #f7f3e9;
       --white: #ffffff;
       --text: #263044;
       --muted: #697386;
       --border: #dedbd2;
+      --green: #25d366;
     }
 
     * {
@@ -37,10 +42,12 @@
       line-height: 1.7;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: Georgia, "Times New Roman", serif;
-      color: var(--navy);
       line-height: 1.15;
+      color: var(--navy);
     }
 
     a {
@@ -49,9 +56,11 @@
     }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       margin: auto;
     }
+
+    /* HEADER */
 
     header {
       position: sticky;
@@ -84,7 +93,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 24px;
       list-style: none;
     }
 
@@ -104,11 +113,18 @@
       border-radius: 4px;
     }
 
+    /* HERO */
+
     .hero {
-      background: var(--navy-dark);
+      background:
+        linear-gradient(
+          rgba(13, 23, 41, 0.94),
+          rgba(13, 23, 41, 0.96)
+        );
+
       color: white;
+      padding: 100px 20px 110px;
       text-align: center;
-      padding: 100px 20px;
     }
 
     .eyebrow {
@@ -117,40 +133,42 @@
       letter-spacing: 2px;
       font-size: 12px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
     .hero h1 {
       color: white;
-      font-size: clamp(42px, 7vw, 68px);
-      margin-bottom: 20px;
+      font-size: clamp(44px, 7vw, 70px);
+      margin-bottom: 22px;
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
-      color: #e9edf4;
+      color: #dce2ec;
       font-size: 18px;
     }
 
-    .pricing {
+    /* PRICING */
+
+    .pricing-section {
       padding: 90px 0;
     }
 
-    .intro {
+    .section-header {
       text-align: center;
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto 55px;
     }
 
-    .intro h2 {
-      font-size: clamp(34px, 5vw, 50px);
+    .section-header h2 {
+      font-size: clamp(34px, 5vw, 48px);
       margin-bottom: 18px;
     }
 
-    .intro p {
+    .section-header p {
       color: var(--muted);
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .pricing-grid {
@@ -160,31 +178,40 @@
       align-items: stretch;
     }
 
-    .card {
-      position: relative;
-      background: white;
+    .pricing-card {
+      background: var(--white);
       border: 1px solid var(--border);
-      border-top: 4px solid var(--gold);
-      padding: 32px 26px;
-      box-shadow: 0 8px 30px rgba(13,23,41,.06);
+      padding: 34px 28px;
+      position: relative;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 10px 35px rgba(13, 23, 41, 0.06);
+      transition: 0.2s;
     }
 
-    .card.popular {
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(13, 23, 41, 0.10);
+    }
+
+    .pricing-card.featured {
       border: 2px solid var(--gold);
-      border-top: 5px solid var(--gold);
       transform: translateY(-8px);
     }
 
-    .popular-label {
+    .pricing-card.featured:hover {
+      transform: translateY(-14px);
+    }
+
+    .popular {
       position: absolute;
-      top: -15px;
+      top: -13px;
       left: 50%;
       transform: translateX(-50%);
       background: var(--gold);
-      color: var(--navy-dark);
+      color: var(--navy);
       padding: 5px 14px;
+      border-radius: 30px;
       font-size: 11px;
       font-weight: bold;
       text-transform: uppercase;
@@ -192,31 +219,31 @@
       white-space: nowrap;
     }
 
-    .card h3 {
+    .pricing-card h3 {
       font-size: 25px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 42px;
+      margin-bottom: 20px;
     }
 
     .price {
-      font-family: Georgia, "Times New Roman", serif;
       color: var(--navy);
-      font-size: 34px;
-      font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 25px;
+    }
+
+    .price strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
     }
 
     .price span {
-      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
       font-size: 13px;
-      color: var(--muted);
-      font-weight: normal;
-    }
-
-    .description {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 25px;
-      min-height: 65px;
     }
 
     .features {
@@ -226,9 +253,9 @@
     }
 
     .features li {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
+      padding: 9px 0;
+      border-bottom: 1px solid #eeeae0;
+      font-size: 13px;
     }
 
     .features li::before {
@@ -238,7 +265,7 @@
       margin-right: 8px;
     }
 
-    .btn {
+    .plan-btn {
       display: block;
       text-align: center;
       background: var(--navy);
@@ -246,68 +273,109 @@
       padding: 13px 18px;
       border-radius: 4px;
       font-weight: bold;
-      transition: .2s;
+      font-size: 14px;
+      transition: 0.2s;
     }
 
-    .btn:hover {
+    .plan-btn:hover {
       background: var(--gold);
-      color: var(--navy-dark);
+      color: var(--navy);
     }
 
-    .custom {
-      margin-top: 25px;
+    .featured .plan-btn {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .featured .plan-btn:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* CUSTOM */
+
+    .custom-section {
       background: var(--white);
-      border: 1px solid var(--border);
-      padding: 35px;
-      display: flex;
+      padding: 80px 0;
+    }
+
+    .custom-box {
+      background: var(--navy);
+      color: white;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
       align-items: center;
-      justify-content: space-between;
-      gap: 30px;
     }
 
-    .custom h3 {
-      font-size: 27px;
-      margin-bottom: 8px;
+    .custom-box h2 {
+      color: white;
+      font-size: 38px;
+      margin-bottom: 12px;
     }
 
-    .custom p {
-      color: var(--muted);
+    .custom-box p {
+      color: #dce2ec;
+      max-width: 680px;
     }
 
-    .custom .btn {
-      min-width: 180px;
+    .custom-btn {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 15px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      white-space: nowrap;
     }
 
-    .note {
+    /* IMPORTANT NOTE */
+
+    .note-section {
+      padding: 70px 0;
+    }
+
+    .note-box {
       max-width: 850px;
-      margin: 45px auto 0;
+      margin: auto;
       text-align: center;
-      color: var(--muted);
-      font-size: 13px;
     }
+
+    .note-box h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .note-box p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* FOOTER */
 
     footer {
       background: var(--navy-dark);
       color: #dce2ec;
       text-align: center;
-      padding: 35px 20px;
+      padding: 40px 20px;
     }
 
     footer strong {
       color: var(--gold);
     }
 
-    @media (max-width: 950px) {
+    /* MOBILE */
+
+    @media (max-width: 1050px) {
+
       .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .card.popular {
-        transform: none;
-      }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
+
       .nav {
         flex-direction: column;
         padding: 18px 0;
@@ -319,233 +387,454 @@
         gap: 14px;
       }
 
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .pricing-card.featured:hover {
+        transform: translateY(-6px);
+      }
+
+      .custom-box {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
       .pricing-grid {
         grid-template-columns: 1fr;
       }
 
-      .custom {
-        flex-direction: column;
-        text-align: center;
+      .pricing-section {
+        padding: 70px 0;
       }
+
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .custom-box h2 {
+        font-size: 31px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
+  <!-- HEADER -->
 
-    <a href="index.html" class="logo">
-      Zion<span>Flow</span>
-    </a>
+  <header>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="how-it-works.html">How It Works</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-    </ul>
+    <div class="container nav">
 
-  </div>
-</header>
+      <a href="index.html" class="logo">
+        Zion<span>Flow</span>
+      </a>
 
-<section class="hero">
-  <div class="container">
+      <ul class="nav-links">
 
-    <div class="eyebrow">Simple. Flexible. Professional.</div>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
 
-    <h1>Pricing That Grows With You.</h1>
+        <li>
+          <a href="about.html">About</a>
+        </li>
 
-    <p>
-      Practical real-estate support packages designed for agents,
-      landlords and growing property portfolios.
-    </p>
+        <li>
+          <a href="services.html">Services</a>
+        </li>
 
-  </div>
-</section>
+        <li>
+          <a href="how-it-works.html">How It Works</a>
+        </li>
 
-<section class="pricing">
+        <li>
+          <a href="pricing.html">Pricing</a>
+        </li>
 
-  <div class="container">
+        <li>
+          <a href="contact.html" class="nav-cta">
+            Get Started
+          </a>
+        </li>
 
-    <div class="intro">
+      </ul>
 
-      <div class="eyebrow">Our Packages</div>
+    </div>
 
-      <h2>Choose the level of support you need.</h2>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Simple. Flexible. Scalable.
+      </div>
+
+      <h1>
+        Support That Fits Your Portfolio.
+      </h1>
 
       <p>
-        Start with the support that makes sense for your business
-        and scale as your workload grows.
+        Practical monthly support for estate agents, landlords,
+        property investors and growing property portfolios.
       </p>
 
     </div>
 
-    <div class="pricing-grid">
+  </section>
 
-      <!-- ESSENTIAL -->
 
-      <div class="card">
+  <!-- PRICING -->
 
-        <h3>Essential</h3>
+  <section class="pricing-section">
 
-        <div class="price">
-          R1,500 <span>/ month</span>
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow">
+          ZionFlow Packages
         </div>
 
-        <p class="description">
-          For professionals who need reliable day-to-day administrative support.
-        </p>
-
-        <ul class="features">
-          <li>Administrative support</li>
-          <li>Lead organisation</li>
-          <li>Data capturing</li>
-          <li>Document organisation</li>
-          <li>Email and task support</li>
-        </ul>
-
-        <a href="contact.html" class="btn">Get Started</a>
-
-      </div>
-
-
-      <!-- PROFESSIONAL -->
-
-      <div class="card popular">
-
-        <div class="popular-label">Most Popular</div>
-
-        <h3>Professional</h3>
-
-        <div class="price">
-          R2,500 <span>/ month</span>
-        </div>
-
-        <p class="description">
-          For active agents who need consistent operational and client support.
-        </p>
-
-        <ul class="features">
-          <li>Everything in Essential</li>
-          <li>Lead follow-ups</li>
-          <li>Property listing assistance</li>
-          <li>CRM updates</li>
-          <li>Client communication support</li>
-          <li>Appointment coordination</li>
-        </ul>
-
-        <a href="contact.html" class="btn">Get Started</a>
-
-      </div>
-
-
-      <!-- RENTAL SUPPORT -->
-
-      <div class="card">
-
-        <h3>Rental Support</h3>
-
-        <div class="price">
-          R3,500 <span>/ month</span>
-        </div>
-
-        <p class="description">
-          Administrative and coordination support for rental properties and tenants.
-        </p>
-
-        <ul class="features">
-          <li>Rental enquiry support</li>
-          <li>Tenant communication</li>
-          <li>Application administration</li>
-          <li>Lease documentation support</li>
-          <li>Maintenance coordination</li>
-          <li>Inspection scheduling</li>
-          <li>Landlord updates</li>
-        </ul>
-
-        <a href="contact.html" class="btn">Discuss Your Property</a>
-
-      </div>
-
-
-      <!-- PROPERTY OPERATIONS -->
-
-      <div class="card">
-
-        <h3>Property Operations</h3>
-
-        <div class="price">
-          R5,000 <span>/ month</span>
-        </div>
-
-        <p class="description">
-          Broader operational support for landlords and growing property portfolios.
-        </p>
-
-        <ul class="features">
-          <li>Everything in Rental Support</li>
-          <li>Property record management</li>
-          <li>Lease expiry tracking</li>
-          <li>Maintenance tracking</li>
-          <li>Contractor coordination</li>
-          <li>Regular property reporting</li>
-          <li>Priority operational support</li>
-        </ul>
-
-        <a href="contact.html" class="btn">Discuss Your Portfolio</a>
-
-      </div>
-
-    </div>
-
-
-    <!-- CUSTOM -->
-
-    <div class="custom">
-
-      <div>
-
-        <h3>Custom Portfolio Support</h3>
+        <h2>
+          Choose the level of support you need.
+        </h2>
 
         <p>
-          Managing multiple properties or need a tailored workflow?
-          We'll build a support package around your portfolio.
+          Start with the package that matches your current workload.
+          As your property operation grows, your support can grow with it.
         </p>
 
       </div>
 
-      <a href="contact.html" class="btn">
-        Let's Talk
-      </a>
+
+      <div class="pricing-grid">
+
+
+        <!-- ESSENTIAL -->
+
+        <div class="pricing-card">
+
+          <h3>
+            Essential
+          </h3>
+
+          <p class="tagline">
+            For landlords and smaller property operations.
+          </p>
+
+          <div class="price">
+            <strong>R1,500</strong>
+            <span>/ month</span>
+          </div>
+
+          <ul class="features">
+
+            <li>
+              Rental administration
+            </li>
+
+            <li>
+              Tenant communication support
+            </li>
+
+            <li>
+              Document organisation
+            </li>
+
+            <li>
+              Follow-up reminders
+            </li>
+
+            <li>
+              Maintenance request coordination
+            </li>
+
+            <li>
+              Basic monthly reporting
+            </li>
+
+          </ul>
+
+          <a href="contact.html" class="plan-btn">
+            Get Started
+          </a>
+
+        </div>
+
+
+        <!-- GROWTH -->
+
+        <div class="pricing-card featured">
+
+          <div class="popular">
+            Most Popular
+          </div>
+
+          <h3>
+            Growth
+          </h3>
+
+          <p class="tagline">
+            For active landlords and growing portfolios.
+          </p>
+
+          <div class="price">
+            <strong>R2,500</strong>
+            <span>/ month</span>
+          </div>
+
+          <ul class="features">
+
+            <li>
+              Everything in Essential
+            </li>
+
+            <li>
+              Regular tenant communication
+            </li>
+
+            <li>
+              Rental payment follow-up administration
+            </li>
+
+            <li>
+              Maintenance coordination
+            </li>
+
+            <li>
+              Inspection scheduling
+            </li>
+
+            <li>
+              Monthly property reporting
+            </li>
+
+            <li>
+              Vacancy and listing administration
+            </li>
+
+          </ul>
+
+          <a href="contact.html" class="plan-btn">
+            Choose Growth
+          </a>
+
+        </div>
+
+
+        <!-- PROFESSIONAL -->
+
+        <div class="pricing-card">
+
+          <h3>
+            Professional
+          </h3>
+
+          <p class="tagline">
+            For established property operations.
+          </p>
+
+          <div class="price">
+            <strong>R4,500</strong>
+            <span>/ month</span>
+          </div>
+
+          <ul class="features">
+
+            <li>
+              Everything in Growth
+            </li>
+
+            <li>
+              Portfolio administration
+            </li>
+
+            <li>
+              Active tenant coordination
+            </li>
+
+            <li>
+              Maintenance supplier coordination
+            </li>
+
+            <li>
+              Lease and document tracking
+            </li>
+
+            <li>
+              Detailed monthly reporting
+            </li>
+
+            <li>
+              Priority support
+            </li>
+
+          </ul>
+
+          <a href="contact.html" class="plan-btn">
+            Talk to Us
+          </a>
+
+        </div>
+
+
+        <!-- PORTFOLIO -->
+
+        <div class="pricing-card">
+
+          <h3>
+            Portfolio
+          </h3>
+
+          <p class="tagline">
+            For larger or complex property portfolios.
+          </p>
+
+          <div class="price">
+            <strong>R7,500+</strong>
+            <span>/ month</span>
+          </div>
+
+          <ul class="features">
+
+            <li>
+              Custom portfolio support
+            </li>
+
+            <li>
+              Dedicated operational support
+            </li>
+
+            <li>
+              High-volume tenant communication
+            </li>
+
+            <li>
+              Maintenance coordination
+            </li>
+
+            <li>
+              Portfolio reporting
+            </li>
+
+            <li>
+              Administrative workflow management
+            </li>
+
+            <li>
+              Custom service scope
+            </li>
+
+          </ul>
+
+          <a href="contact.html" class="plan-btn">
+            Request Consultation
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
+  </section>
 
-    <p class="note">
-      Packages are starting prices and may be adjusted according to
-      property count, workload, service requirements and agreed scope.
-      Regulatory and property-practitioner requirements apply where relevant.
+
+  <!-- CUSTOM PACKAGE -->
+
+  <section class="custom-section">
+
+    <div class="container">
+
+      <div class="custom-box">
+
+        <div>
+
+          <div class="eyebrow">
+            Need Something Different?
+          </div>
+
+          <h2>
+            Build a support package around your workload.
+          </h2>
+
+          <p>
+            Every property operation is different. If you need a
+            combination of rental administration, tenant support,
+            maintenance coordination or estate-agent assistance,
+            speak to us about a tailored package.
+          </p>
+
+        </div>
+
+        <a href="contact.html" class="custom-btn">
+          Request Custom Support
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- NOTE -->
+
+  <section class="note-section">
+
+    <div class="container">
+
+      <div class="note-box">
+
+        <div class="eyebrow">
+          A Clear Scope
+        </div>
+
+        <h2>
+          Your support. Your workload. Your package.
+        </h2>
+
+        <p>
+          Packages are based on the agreed scope of work and workload.
+          Additional services or increased volumes may require a revised
+          monthly package. All services are subject to an agreed scope
+          before work begins.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      <strong>ZionFlow</strong> — Real Estate Operations & Support
     </p>
 
-  </div>
+    <p>
+      Helping real-estate professionals stay organised,
+      responsive and moving forward.
+    </p>
 
-</section>
-
-<footer>
-
-  <p>
-    <strong>ZionFlow</strong> — Real Estate Operations & Support
-  </p>
-
-  <p>
-    Helping real-estate professionals stay organised, responsive and moving forward.
-  </p>
-
-</footer>
+  </footer>
 
 </body>
 </html>
