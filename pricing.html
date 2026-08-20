@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
@@ -6,7 +7,7 @@
 
   <title>Pricing | ZionFlow</title>
 
-  <meta name="description" content="Explore ZionFlow's remote administrative and lead-support packages for real-estate professionals across South Africa.">
+  <meta name="description" content="Simple, flexible remote support packages for South African real estate professionals. Choose the ZionFlow support package that fits your business.">
 
   <style>
     :root {
@@ -26,6 +27,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
@@ -33,9 +38,12 @@
       line-height: 1.7;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.15;
+      color: var(--navy);
     }
 
     a {
@@ -48,11 +56,13 @@
       margin: auto;
     }
 
+    /* HEADER */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(247,243,233,.97);
+      background: rgba(247, 243, 233, 0.97);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
@@ -62,6 +72,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 30px;
     }
 
     .logo {
@@ -85,6 +96,7 @@
     .nav-links a {
       font-size: 14px;
       font-weight: 600;
+      color: var(--navy);
     }
 
     .nav-links a:hover {
@@ -93,315 +105,328 @@
 
     .nav-cta {
       background: var(--gold);
-      color: var(--navy-dark) !important;
+      color: var(--navy-dark);
       padding: 12px 18px;
       border-radius: 4px;
     }
 
+    /* HERO */
+
     .hero {
-      background: var(--navy);
-      color: white;
-      padding: 100px 0;
+      background:
+        linear-gradient(rgba(13, 23, 41, 0.9), rgba(13, 23, 41, 0.9)),
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      padding: 110px 0;
       text-align: center;
     }
 
+    .hero-content {
+      max-width: 780px;
+      margin: auto;
+    }
+
     .eyebrow {
-      color: var(--gold);
+      color: #ead78e;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 12px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
       color: white;
-      font-size: clamp(44px, 7vw, 68px);
+      font-size: clamp(44px, 7vw, 70px);
       margin-bottom: 25px;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #d9dfeb;
+      color: #e9edf4;
       font-size: 18px;
     }
 
-    section {
-      padding: 90px 0;
-    }
+    /* PRICING */
 
-    .pricing-section {
+    .pricing {
+      padding: 100px 0;
       background: var(--cream);
     }
 
-    .pricing-header {
+    .pricing-intro {
       text-align: center;
-      margin-bottom: 55px;
+      max-width: 720px;
+      margin: 0 auto 60px;
     }
 
-    .pricing-header h2 {
-      color: var(--navy);
-      font-size: 45px;
+    .pricing-intro h2 {
+      font-size: clamp(34px, 5vw, 50px);
       margin-bottom: 20px;
     }
 
-    .pricing-header p {
-      max-width: 700px;
-      margin: auto;
+    .pricing-intro p {
       color: var(--muted);
+      font-size: 17px;
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 24px;
       align-items: stretch;
     }
 
-    .card {
+    .price-card {
       background: white;
       border: 1px solid var(--border);
-      padding: 38px 30px;
+      padding: 40px 32px;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 10px 35px rgba(13, 23, 41, 0.06);
+      position: relative;
     }
 
-    .card.featured {
+    .price-card.featured {
       border: 2px solid var(--gold);
       transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(13,23,41,.10);
     }
 
-    .badge {
-      display: inline-block;
-      align-self: flex-start;
+    .popular {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       background: var(--gold);
       color: var(--navy-dark);
-      padding: 5px 10px;
-      font-size: 10px;
+      text-align: center;
+      padding: 8px;
+      font-size: 12px;
       font-weight: bold;
       letter-spacing: 1px;
-      margin-bottom: 18px;
+      text-transform: uppercase;
     }
 
-    .card h3 {
-      color: var(--navy);
-      font-size: 29px;
-      margin-bottom: 10px;
+    .featured .price-content {
+      padding-top: 20px;
     }
 
-    .card-description {
+    .plan-name {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .plan-description {
       color: var(--muted);
-      font-size: 14px;
       min-height: 70px;
+      margin-bottom: 25px;
     }
 
     .price {
-      margin: 25px 0;
+      font-family: Georgia, "Times New Roman", serif;
       color: var(--navy);
-      font-family: Georgia, serif;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 5px;
     }
 
     .price small {
-      display: block;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
       color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 3px;
+      font-weight: normal;
     }
 
-    .price strong {
-      font-size: 40px;
-    }
-
-    .price span {
-      font-family: Arial, sans-serif;
+    .price-note {
       color: var(--muted);
       font-size: 13px;
+      margin-bottom: 28px;
     }
 
     .features {
       list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 25px;
       margin-bottom: 30px;
-      flex-grow: 1;
+      flex: 1;
     }
 
     .features li {
-      border-top: 1px solid #ece9e2;
-      padding: 12px 0;
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 14px;
+      color: var(--text);
       font-size: 14px;
     }
 
     .features li::before {
       content: "✓";
+      position: absolute;
+      left: 0;
       color: var(--gold);
       font-weight: bold;
-      margin-right: 9px;
     }
 
     .btn {
       display: block;
       text-align: center;
       padding: 14px 20px;
-      background: var(--navy);
-      color: white;
-      font-weight: bold;
       border-radius: 4px;
+      font-weight: bold;
+      transition: 0.2s;
     }
 
-    .featured .btn {
+    .btn-primary {
       background: var(--gold);
       color: var(--navy-dark);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--navy);
+      color: var(--navy);
     }
 
     .btn:hover {
-      opacity: .9;
+      transform: translateY(-2px);
     }
 
-    .note {
-      text-align: center;
-      margin-top: 35px;
-      color: var(--muted);
-      font-size: 13px;
+    /* CUSTOM */
+
+    .custom {
+      background: var(--white);
+      padding: 80px 0;
     }
 
-    .terms {
-      background: white;
-    }
-
-    .terms-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .term {
-      padding: 30px;
-      background: var(--cream);
-      border-top: 3px solid var(--gold);
-    }
-
-    .term h3 {
-      color: var(--navy);
-      font-size: 23px;
-      margin-bottom: 12px;
-    }
-
-    .term p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .cta {
+    .custom-box {
       background: var(--navy);
-      color: white;
-      text-align: center;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+      border-top: 4px solid var(--gold);
     }
 
-    .cta h2 {
+    .custom-box h2 {
       color: white;
-      font-size: 45px;
-      margin-bottom: 20px;
+      font-size: 38px;
+      margin-bottom: 15px;
     }
 
-    .cta p {
+    .custom-box p {
+      color: #d9dfeb;
       max-width: 650px;
-      margin: 0 auto 30px;
-      color: #d3d9e4;
     }
 
-    .cta .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy-dark);
+    .custom-box .btn {
+      white-space: nowrap;
     }
+
+    /* FAQ */
+
+    .faq {
+      background: var(--cream);
+      padding: 90px 0;
+    }
+
+    .faq-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .faq-heading h2 {
+      font-size: 44px;
+    }
+
+    .faq-grid {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: white;
+      padding: 28px;
+      margin-bottom: 15px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .faq-item h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* FOOTER */
 
     footer {
-      background: #080f1d;
-      color: #cbd2df;
-      padding: 60px 0 25px;
+      background: var(--navy-dark);
+      padding: 30px 0;
+      border-top: 1px solid rgba(201, 169, 74, 0.3);
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 50px;
-      padding-bottom: 40px;
-    }
-
-    footer .logo {
-      color: white;
-      display: inline-block;
-      margin-bottom: 15px;
-    }
-
-    footer h3 {
-      color: white;
-      font-size: 18px;
-      margin-bottom: 18px;
-    }
-
-    footer ul {
-      list-style: none;
-    }
-
-    footer li {
-      margin-bottom: 8px;
-    }
-
-    footer a:hover {
-      color: var(--gold);
-    }
-
-    .footer-tagline {
-      color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding-top: 20px;
-      font-size: 13px;
+    .footer-content {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
-    @media (max-width: 900px) {
+    .footer-logo {
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-text {
+      color: #aeb7c7;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
       .nav-links {
-        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
       }
 
-      .pricing-grid,
-      .terms-grid {
+      .pricing-grid {
         grid-template-columns: 1fr;
+        max-width: 520px;
+        margin: auto;
       }
 
-      .card.featured {
+      .price-card.featured {
         transform: none;
       }
 
-      .footer-grid {
+      .custom-box {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 30px, 1120px);
+        padding: 35px;
       }
 
-      section {
-        padding: 70px 0;
+      .custom-box .btn {
+        width: fit-content;
       }
 
-      .hero {
-        padding: 80px 0;
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
@@ -409,297 +434,359 @@
 
 <body>
 
-<header>
-  <div class="container nav">
+  <header>
+    <div class="container nav">
 
-    <a href="index.html" class="logo">
-      Zion<span>Flow</span>
-    </a>
+      <a href="index.html" class="logo">
+        Zion<span>Flow</span>
+      </a>
 
-    <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="contact.html" class="nav-cta">Book a Consultation</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
       </ul>
-    </nav>
-
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-
-  <div class="container">
-
-    <div class="eyebrow">Pricing</div>
-
-    <h1>Choose the Level of Support You Need.</h1>
-
-    <p>
-      Straightforward monthly packages designed around the administrative and
-      lead-support needs of real-estate professionals.
-    </p>
-
-  </div>
-
-</section>
-
-<section class="pricing-section">
-
-  <div class="container">
-
-    <div class="pricing-header">
-
-      <div class="eyebrow">Monthly Support</div>
-
-      <h2>Simple Packages. Clear Expectations.</h2>
-
-      <p>
-        Every business has different requirements. These packages provide a
-        starting point, with the scope of support agreed before work begins.
-      </p>
 
     </div>
+  </header>
 
-    <div class="pricing-grid">
+  <main>
 
-      <!-- Essential -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
 
-      <div class="card">
+          <div class="eyebrow">Simple & Flexible</div>
 
-        <h3>Essential Support</h3>
+          <h1>Support that fits your business.</h1>
 
-        <p class="card-description">
-          A practical starting point for professionals who need reliable
-          administrative assistance.
-        </p>
+          <p>
+            Choose the level of remote support you need today and scale as
+            your real estate business grows.
+          </p>
 
-        <div class="price">
-          <small>From</small>
-          <strong>R3,500</strong>
-          <span>/ month</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing">
+
+      <div class="container">
+
+        <div class="pricing-intro">
+
+          <div class="eyebrow" style="color: var(--gold);">
+            Our Packages
+          </div>
+
+          <h2>Choose your support level.</h2>
+
+          <p>
+            Straightforward monthly support packages designed for real estate
+            professionals who want dependable assistance without unnecessary
+            complexity.
+          </p>
+
         </div>
 
-        <ul class="features">
-          <li>Administrative support</li>
-          <li>Lead information organization</li>
-          <li>Basic follow-up support</li>
-          <li>Task and workflow organization</li>
-          <li>Regular progress updates</li>
-        </ul>
+        <div class="pricing-grid">
 
-        <a href="contact.html" class="btn">
-          Book a Consultation
-        </a>
+          <!-- STARTER -->
 
-      </div>
+          <div class="price-card">
 
-      <!-- Lead -->
+            <div class="price-content">
 
-      <div class="card featured">
+              <h3 class="plan-name">Starter</h3>
 
-        <div class="badge">POPULAR</div>
+              <p class="plan-description">
+                For agents who need reliable help with essential
+                administrative tasks.
+              </p>
 
-        <h3>Lead Support</h3>
+              <div class="price">
+                R1,500
+                <small>/ month</small>
+              </div>
 
-        <p class="card-description">
-          More hands-on support for professionals managing a larger volume of
-          enquiries and follow-ups.
-        </p>
+              <div class="price-note">
+                Ideal for getting started.
+              </div>
 
-        <div class="price">
-          <small>From</small>
-          <strong>R5,000</strong>
-          <span>/ month</span>
+              <ul class="features">
+
+                <li>Basic administrative support</li>
+
+                <li>Lead organisation</li>
+
+                <li>Calendar and appointment assistance</li>
+
+                <li>Client information management</li>
+
+                <li>Email and document support</li>
+
+                <li>Monthly support review</li>
+
+              </ul>
+
+              <a href="contact.html" class="btn btn-secondary">
+                Get Started
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- PROFESSIONAL -->
+
+          <div class="price-card featured">
+
+            <div class="popular">
+              Most Popular
+            </div>
+
+            <div class="price-content">
+
+              <h3 class="plan-name">Professional</h3>
+
+              <p class="plan-description">
+                For active agents who need consistent support across
+                administration and lead management.
+              </p>
+
+              <div class="price">
+                R2,000
+                <small>/ month</small>
+              </div>
+
+              <div class="price-note">
+                A balanced support solution.
+              </div>
+
+              <ul class="features">
+
+                <li>Everything in Starter</li>
+
+                <li>Lead follow-up support</li>
+
+                <li>Listing administration</li>
+
+                <li>CRM and database updates</li>
+
+                <li>Client communication support</li>
+
+                <li>Weekly task coordination</li>
+
+                <li>Priority support</li>
+
+              </ul>
+
+              <a href="contact.html" class="btn btn-primary">
+                Choose Professional
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- PREMIUM -->
+
+          <div class="price-card">
+
+            <div class="price-content">
+
+              <h3 class="plan-name">Premium</h3>
+
+              <p class="plan-description">
+                For high-volume professionals who need broader operational
+                support.
+              </p>
+
+              <div class="price">
+                R2,500
+                <small>/ month</small>
+              </div>
+
+              <div class="price-note">
+                Maximum support within our standard packages.
+              </div>
+
+              <ul class="features">
+
+                <li>Everything in Professional</li>
+
+                <li>Advanced lead support</li>
+
+                <li>Expanded administrative assistance</li>
+
+                <li>Listing and campaign coordination</li>
+
+                <li>Detailed reporting support</li>
+
+                <li>Higher-priority task handling</li>
+
+                <li>Regular performance reviews</li>
+
+              </ul>
+
+              <a href="contact.html" class="btn btn-secondary">
+                Get Premium
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <ul class="features">
-          <li>Everything in Essential Support</li>
-          <li>Lead follow-up assistance</li>
-          <li>Lead tracking and organization</li>
-          <li>Enquiry management support</li>
-          <li>More frequent workflow updates</li>
-        </ul>
-
-        <a href="contact.html" class="btn">
-          Book a Consultation
-        </a>
-
       </div>
 
-      <!-- Business -->
+    </section>
 
-      <div class="card">
+    <section class="custom">
 
-        <h3>Business Support</h3>
+      <div class="container">
 
-        <p class="card-description">
-          A broader support solution for professionals who require ongoing
-          administrative and lead-support assistance.
-        </p>
+        <div class="custom-box">
 
-        <div class="price">
-          <small>From</small>
-          <strong>R7,500</strong>
-          <span>/ month</span>
+          <div>
+
+            <h2>Need something more specific?</h2>
+
+            <p>
+              Every real estate business operates differently. If your
+              requirements don't fit one of our standard packages, contact us
+              and we can discuss a support arrangement based on your workload.
+            </p>
+
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">
+            Discuss Your Needs
+          </a>
+
         </div>
 
-        <ul class="features">
-          <li>Everything in Lead Support</li>
-          <li>Expanded administrative support</li>
-          <li>Advanced workflow coordination</li>
-          <li>Lead management assistance</li>
-          <li>Priority communication</li>
-        </ul>
-
-        <a href="contact.html" class="btn">
-          Book a Consultation
-        </a>
-
       </div>
 
-    </div>
+    </section>
 
-    <p class="note">
-      All packages start from the advertised price. Final scope and pricing
-      depend on workload, responsibilities and agreed requirements.
-    </p>
+    <section class="faq">
 
-  </div>
+      <div class="container">
 
-</section>
+        <div class="faq-heading">
 
-<section class="terms">
+          <div class="eyebrow" style="color: var(--gold);">
+            Pricing Questions
+          </div>
 
-  <div class="container">
+          <h2>Good to know.</h2>
 
-    <div class="pricing-header">
-
-      <div class="eyebrow">Working Together</div>
-
-      <h2>Built for Long-Term Support.</h2>
-
-    </div>
-
-    <div class="terms-grid">
-
-      <div class="term">
-        <h3>Flexible Scope</h3>
-        <p>
-          Your responsibilities and workload can be discussed before
-          onboarding so expectations are clear.
-        </p>
-      </div>
-
-      <div class="term">
-        <h3>Monthly Support</h3>
-        <p>
-          Packages are structured around ongoing monthly support rather than
-          one-off tasks.
-        </p>
-      </div>
-
-      <div class="term">
-        <h3>Growing With You</h3>
-        <p>
-          As your business grows, your support requirements can be reviewed
-          and adjusted accordingly.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="cta">
-
-  <div class="container">
-
-    <div class="eyebrow">Let's Discuss Your Needs</div>
-
-    <h2>Not Sure Which Package Fits?</h2>
-
-    <p>
-      Book a consultation and we'll discuss your workflow, responsibilities
-      and the level of support that makes sense for your business.
-    </p>
-
-    <a href="contact.html" class="btn">
-      Book a Consultation
-    </a>
-
-  </div>
-
-</section>
-
-</main>
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <a href="index.html" class="logo">
-          Zion<span>Flow</span>
-        </a>
-
-        <div class="footer-tagline">
-          FAITH. SERVICE. EXCELLENCE.
         </div>
 
-        <p>
-          Remote administrative and lead-support services for real-estate
-          professionals across South Africa.
-        </p>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+
+            <h3>Can I change packages later?</h3>
+
+            <p>
+              Yes. As your workload changes, your support package can be
+              reviewed and adjusted to better match your requirements.
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>Are the packages fixed?</h3>
+
+            <p>
+              The packages provide a clear starting point. Additional or
+              specialised work can be discussed depending on your needs.
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>Who are these packages for?</h3>
+
+            <p>
+              They are designed primarily for real estate agents,
+              professionals and small teams looking for dependable remote
+              administrative and lead-support assistance.
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>How do I get started?</h3>
+
+            <p>
+              Contact ZionFlow, tell us what you need help with, and we'll
+              determine which support option is the best fit for your
+              business.
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
-      <div>
+    </section>
 
-        <h3>Navigation</h3>
+    <section class="custom" style="padding-top: 70px; padding-bottom: 70px;">
 
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="container">
+
+        <div class="custom-box">
+
+          <div>
+
+            <h2>Ready to get support?</h2>
+
+            <p>
+              Let's make the day-to-day side of your real estate business
+              easier to manage.
+            </p>
+
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">
+            Contact ZionFlow
+          </a>
+
+        </div>
 
       </div>
 
-      <div>
+    </section>
 
-        <h3>Contact</h3>
+  </main>
 
-        <ul>
-          <li><a href="contact.html">Book a Consultation</a></li>
-          <li>South Africa | Remote Support</li>
-        </ul>
+  <footer>
 
+    <div class="container footer-content">
+
+      <div class="footer-logo">
+        Zion<span>Flow</span>
+      </div>
+
+      <div class="footer-text">
+        Remote support for real estate professionals across South Africa.
       </div>
 
     </div>
 
-    <div class="copyright">
-      <span>© 2026 ZionFlow. All rights reserved.</span>
-      <span>Built on faith. Delivered with excellence.</span>
-    </div>
-
-  </div>
-
-</footer>
+  </footer>
 
 </body>
 </html>
+```
