@@ -1,20 +1,18 @@
-```html
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pricing | ZionFlow</title>
+  <title>ZionFlow | Pricing</title>
 
-  <meta name="description" content="Simple and flexible remote support packages for real estate professionals across South Africa.">
+  <meta name="description" content="Flexible remote real-estate support, rental administration and property operations packages from ZionFlow.">
 
   <style>
     :root {
       --navy: #17243d;
       --navy-dark: #0d1729;
       --gold: #c9a94a;
-      --gold-light: #ead78e;
       --cream: #f7f3e9;
       --white: #ffffff;
       --text: #263044;
@@ -39,12 +37,10 @@
       line-height: 1.7;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.2;
       color: var(--navy);
+      line-height: 1.15;
     }
 
     a {
@@ -56,8 +52,6 @@
       width: min(1120px, calc(100% - 40px));
       margin: auto;
     }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -73,7 +67,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 30px;
     }
 
     .logo {
@@ -90,7 +84,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 25px;
       list-style: none;
     }
 
@@ -106,142 +100,134 @@
 
     .nav-cta {
       background: var(--gold);
-      padding: 11px 17px;
+      padding: 12px 18px;
       border-radius: 4px;
     }
 
-    /* HERO */
-
     .hero {
-      background:
-        linear-gradient(
-          rgba(13, 23, 41, 0.91),
-          rgba(13, 23, 41, 0.95)
-        );
-      padding: 100px 0;
-      text-align: center;
+      background: var(--navy-dark);
       color: white;
+      text-align: center;
+      padding: 100px 20px;
     }
 
     .eyebrow {
-      color: var(--gold-light);
+      color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 12px;
       font-weight: bold;
-      margin-bottom: 16px;
+      margin-bottom: 15px;
     }
 
     .hero h1 {
       color: white;
-      font-size: clamp(44px, 7vw, 70px);
-      margin-bottom: 22px;
+      font-size: clamp(42px, 7vw, 68px);
+      margin-bottom: 20px;
     }
 
     .hero p {
       max-width: 700px;
       margin: auto;
-      color: #e1e6ef;
+      color: #e9edf4;
       font-size: 18px;
     }
 
-    /* PRICING */
-
-    .pricing-section {
+    .pricing {
       padding: 90px 0;
-      background: var(--cream);
     }
 
-    .section-heading {
+    .intro {
       text-align: center;
-      max-width: 720px;
+      max-width: 700px;
       margin: 0 auto 55px;
     }
 
-    .section-heading h2 {
-      font-size: clamp(36px, 5vw, 52px);
+    .intro h2 {
+      font-size: clamp(34px, 5vw, 50px);
       margin-bottom: 18px;
     }
 
-    .section-heading p {
+    .intro p {
       color: var(--muted);
       font-size: 17px;
     }
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       align-items: stretch;
     }
 
-    .price-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 38px 32px;
+    .card {
       position: relative;
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      padding: 32px 26px;
+      box-shadow: 0 8px 30px rgba(13,23,41,.06);
       display: flex;
       flex-direction: column;
-      box-shadow: 0 10px 35px rgba(13, 23, 41, 0.06);
     }
 
-    .price-card.featured {
+    .card.popular {
       border: 2px solid var(--gold);
-      transform: translateY(-10px);
-      box-shadow: 0 18px 45px rgba(13, 23, 41, 0.12);
+      border-top: 5px solid var(--gold);
+      transform: translateY(-8px);
     }
 
-    .popular {
+    .popular-label {
       position: absolute;
-      top: 0;
+      top: -15px;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       background: var(--gold);
       color: var(--navy-dark);
-      padding: 7px 15px;
+      padding: 5px 14px;
       font-size: 11px;
       font-weight: bold;
-      letter-spacing: 1px;
       text-transform: uppercase;
+      letter-spacing: 1px;
       white-space: nowrap;
     }
 
-    .price-card h3 {
-      font-size: 28px;
+    .card h3 {
+      font-size: 25px;
       margin-bottom: 12px;
     }
 
-    .price-description {
-      color: var(--muted);
-      min-height: 70px;
-      font-size: 15px;
-    }
-
     .price {
-      margin: 25px 0;
+      font-family: Georgia, "Times New Roman", serif;
       color: var(--navy);
-      font-family: Georgia, serif;
-    }
-
-    .price strong {
-      font-size: 42px;
+      font-size: 34px;
+      font-weight: bold;
+      margin-bottom: 5px;
     }
 
     .price span {
-      color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: normal;
+    }
+
+    .description {
+      color: var(--muted);
       font-size: 14px;
+      margin-bottom: 25px;
+      min-height: 65px;
     }
 
     .features {
       list-style: none;
-      margin: 10px 0 30px;
+      margin-bottom: 30px;
       flex-grow: 1;
     }
 
     .features li {
-      padding: 12px 0;
-      border-bottom: 1px solid #eeeae1;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
       font-size: 14px;
     }
 
@@ -249,205 +235,97 @@
       content: "✓";
       color: var(--gold);
       font-weight: bold;
-      margin-right: 10px;
-    }
-
-    .price-btn {
-      display: block;
-      text-align: center;
-      padding: 13px 20px;
-      border: 1px solid var(--navy);
-      color: var(--navy);
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    .price-btn:hover {
-      background: var(--navy);
-      color: white;
-    }
-
-    .featured .price-btn {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--navy-dark);
-    }
-
-    .featured .price-btn:hover {
-      background: var(--navy);
-      border-color: var(--navy);
-      color: white;
-    }
-
-    /* FLEXIBILITY */
-
-    .flexibility {
-      background: var(--white);
-      padding: 90px 0;
-    }
-
-    .flex-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .flexibility h2 {
-      font-size: clamp(36px, 5vw, 50px);
-      margin-bottom: 20px;
-    }
-
-    .flexibility p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .flex-card {
-      background: var(--navy);
-      padding: 40px;
-      border-left: 4px solid var(--gold);
-      color: white;
-    }
-
-    .flex-card h3 {
-      color: white;
-      font-size: 28px;
-      margin-bottom: 18px;
-    }
-
-    .flex-card p {
-      color: #dce2eb;
-    }
-
-    /* FAQ */
-
-    .faq {
-      background: var(--cream);
-      padding: 90px 0;
-    }
-
-    .faq-heading {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .faq-heading h2 {
-      font-size: clamp(36px, 5vw, 50px);
-    }
-
-    .faq-grid {
-      max-width: 800px;
-      margin: auto;
-      display: grid;
-      gap: 15px;
-    }
-
-    details {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 20px 24px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: var(--navy);
-    }
-
-    details p {
-      color: var(--muted);
-      padding-top: 15px;
-      font-size: 15px;
-    }
-
-    /* CTA */
-
-    .cta {
-      background: var(--navy-dark);
-      color: white;
-      text-align: center;
-      padding: 90px 0;
-    }
-
-    .cta h2 {
-      color: white;
-      font-size: clamp(36px, 5vw, 52px);
-      margin-bottom: 18px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: #dce2eb;
+      margin-right: 8px;
     }
 
     .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy-dark);
-      padding: 14px 26px;
+      display: block;
+      text-align: center;
+      background: var(--navy);
+      color: white;
+      padding: 13px 18px;
       border-radius: 4px;
       font-weight: bold;
+      transition: .2s;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      background: var(--gold);
+      color: var(--navy-dark);
     }
 
-    /* FOOTER */
+    .custom {
+      margin-top: 25px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
 
-    footer {
-      background: #080f1d;
-      color: #aeb7c7;
+    .custom h3 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .custom p {
+      color: var(--muted);
+    }
+
+    .custom .btn {
+      min-width: 180px;
+    }
+
+    .note {
+      max-width: 850px;
+      margin: 45px auto 0;
       text-align: center;
-      padding: 35px 0;
-    }
-
-    footer strong {
-      color: white;
-      font-family: Georgia, serif;
-      font-size: 21px;
-    }
-
-    footer p {
-      margin-top: 8px;
+      color: var(--muted);
       font-size: 13px;
     }
 
-    /* MOBILE */
+    footer {
+      background: var(--navy-dark);
+      color: #dce2ec;
+      text-align: center;
+      padding: 35px 20px;
+    }
 
-    @media (max-width: 900px) {
+    footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 950px) {
       .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-        margin: auto;
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .price-card.featured {
+      .card.popular {
         transform: none;
-      }
-
-      .flex-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
       }
     }
 
     @media (max-width: 700px) {
       .nav {
-        padding: 15px 0;
         flex-direction: column;
+        padding: 18px 0;
       }
 
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 14px;
       }
 
-      .hero {
-        padding: 80px 0;
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .custom {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
@@ -462,339 +340,212 @@
       Zion<span>Flow</span>
     </a>
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="how-it-works.html">How It Works</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      </ul>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
 
   </div>
 </header>
 
-<main>
+<section class="hero">
+  <div class="container">
 
-  <!-- HERO -->
+    <div class="eyebrow">Simple. Flexible. Professional.</div>
 
-  <section class="hero">
+    <h1>Pricing That Grows With You.</h1>
 
-    <div class="container">
+    <p>
+      Practical real-estate support packages designed for agents,
+      landlords and growing property portfolios.
+    </p>
 
-      <div class="eyebrow">Simple. Flexible. Professional.</div>
+  </div>
+</section>
 
-      <h1>
-        Support that works for your business.
-      </h1>
+<section class="pricing">
+
+  <div class="container">
+
+    <div class="intro">
+
+      <div class="eyebrow">Our Packages</div>
+
+      <h2>Choose the level of support you need.</h2>
 
       <p>
-        Choose a support level that matches your current workload.
-        As your business grows, your support can grow with it.
+        Start with the support that makes sense for your business
+        and scale as your workload grows.
       </p>
 
     </div>
 
-  </section>
+    <div class="pricing-grid">
 
-  <!-- PRICING -->
+      <!-- ESSENTIAL -->
 
-  <section class="pricing-section">
+      <div class="card">
 
-    <div class="container">
+        <h3>Essential</h3>
 
-      <div class="section-heading">
-
-        <div class="eyebrow" style="color: var(--gold);">
-          Support Packages
+        <div class="price">
+          R1,500 <span>/ month</span>
         </div>
 
-        <h2>
-          Choose your level of support.
-        </h2>
-
-        <p>
-          Our packages provide a simple starting point for real estate
-          professionals who want dependable remote assistance.
+        <p class="description">
+          For professionals who need reliable day-to-day administrative support.
         </p>
+
+        <ul class="features">
+          <li>Administrative support</li>
+          <li>Lead organisation</li>
+          <li>Data capturing</li>
+          <li>Document organisation</li>
+          <li>Email and task support</li>
+        </ul>
+
+        <a href="contact.html" class="btn">Get Started</a>
 
       </div>
 
-      <div class="pricing-grid">
 
-        <!-- STARTER -->
+      <!-- PROFESSIONAL -->
 
-        <article class="price-card">
+      <div class="card popular">
 
-          <h3>Essential</h3>
+        <div class="popular-label">Most Popular</div>
 
-          <p class="price-description">
-            For professionals who need help keeping their everyday
-            administrative workload under control.
-          </p>
+        <h3>Professional</h3>
 
-          <div class="price">
-            <strong>R1,500</strong>
-            <span>/ month</span>
-          </div>
+        <div class="price">
+          R2,500 <span>/ month</span>
+        </div>
 
-          <ul class="features">
+        <p class="description">
+          For active agents who need consistent operational and client support.
+        </p>
 
-            <li>Administrative support</li>
-            <li>Lead organisation</li>
-            <li>Basic data capturing</li>
-            <li>Document organisation</li>
-            <li>Email and task support</li>
+        <ul class="features">
+          <li>Everything in Essential</li>
+          <li>Lead follow-ups</li>
+          <li>Property listing assistance</li>
+          <li>CRM updates</li>
+          <li>Client communication support</li>
+          <li>Appointment coordination</li>
+        </ul>
 
-          </ul>
+        <a href="contact.html" class="btn">Get Started</a>
 
-          <a href="contact.html" class="price-btn">
-            Get Started
-          </a>
+      </div>
 
-        </article>
 
-        <!-- PROFESSIONAL -->
+      <!-- RENTAL SUPPORT -->
 
-        <article class="price-card featured">
+      <div class="card">
 
-          <div class="popular">
-            Most Popular
-          </div>
+        <h3>Rental Support</h3>
 
-          <h3>Professional</h3>
+        <div class="price">
+          R3,500 <span>/ month</span>
+        </div>
 
-          <p class="price-description">
-            For active agents who need consistent support across
-            administration, leads and daily operations.
-          </p>
+        <p class="description">
+          Administrative and coordination support for rental properties and tenants.
+        </p>
 
-          <div class="price">
-            <strong>R2,000</strong>
-            <span>/ month</span>
-          </div>
+        <ul class="features">
+          <li>Rental enquiry support</li>
+          <li>Tenant communication</li>
+          <li>Application administration</li>
+          <li>Lease documentation support</li>
+          <li>Maintenance coordination</li>
+          <li>Inspection scheduling</li>
+          <li>Landlord updates</li>
+        </ul>
 
-          <ul class="features">
+        <a href="contact.html" class="btn">Discuss Your Property</a>
 
-            <li>Everything in Essential</li>
-            <li>Lead follow-up support</li>
-            <li>Property listing assistance</li>
-            <li>CRM and database updates</li>
-            <li>Client communication support</li>
-            <li>Weekly workflow coordination</li>
+      </div>
 
-          </ul>
 
-          <a href="contact.html" class="price-btn">
-            Choose Professional
-          </a>
+      <!-- PROPERTY OPERATIONS -->
 
-        </article>
+      <div class="card">
 
-        <!-- PREMIUM -->
+        <h3>Property Operations</h3>
 
-        <article class="price-card">
+        <div class="price">
+          R5,000 <span>/ month</span>
+        </div>
 
-          <h3>Growth</h3>
+        <p class="description">
+          Broader operational support for landlords and growing property portfolios.
+        </p>
 
-          <p class="price-description">
-            For established professionals who want a broader remote
-            support function around their business.
-          </p>
+        <ul class="features">
+          <li>Everything in Rental Support</li>
+          <li>Property record management</li>
+          <li>Lease expiry tracking</li>
+          <li>Maintenance tracking</li>
+          <li>Contractor coordination</li>
+          <li>Regular property reporting</li>
+          <li>Priority operational support</li>
+        </ul>
 
-          <div class="price">
-            <strong>R2,500</strong>
-            <span>/ month</span>
-          </div>
-
-          <ul class="features">
-
-            <li>Everything in Professional</li>
-            <li>Advanced lead support</li>
-            <li>Listing coordination</li>
-            <li>Expanded administrative support</li>
-            <li>Priority task management</li>
-            <li>Custom workflow assistance</li>
-
-          </ul>
-
-          <a href="contact.html" class="price-btn">
-            Start Growing
-          </a>
-
-        </article>
+        <a href="contact.html" class="btn">Discuss Your Portfolio</a>
 
       </div>
 
     </div>
 
-  </section>
 
-  <!-- FLEXIBILITY -->
+    <!-- CUSTOM -->
 
-  <section class="flexibility">
-
-    <div class="container flex-grid">
+    <div class="custom">
 
       <div>
 
-        <div class="eyebrow" style="color: var(--gold);">
-          Flexible Support
-        </div>
-
-        <h2>
-          Your business isn't one-size-fits-all.
-        </h2>
+        <h3>Custom Portfolio Support</h3>
 
         <p>
-          Every real estate professional has different priorities,
-          systems and workloads.
-        </p>
-
-        <p>
-          Our packages provide a starting point. We can discuss the
-          specific responsibilities you need support with and create
-          an arrangement that makes sense for your business.
+          Managing multiple properties or need a tailored workflow?
+          We'll build a support package around your portfolio.
         </p>
 
       </div>
-
-      <div class="flex-card">
-
-        <h3>
-          Need something different?
-        </h3>
-
-        <p>
-          If your requirements don't fit neatly into one package,
-          contact us. We can discuss a tailored support arrangement
-          based on the work involved.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- FAQ -->
-
-  <section class="faq">
-
-    <div class="container">
-
-      <div class="faq-heading">
-
-        <div class="eyebrow" style="color: var(--gold);">
-          Questions
-        </div>
-
-        <h2>
-          Pricing FAQs
-        </h2>
-
-      </div>
-
-      <div class="faq-grid">
-
-        <details>
-          <summary>
-            Are the prices per agent?
-          </summary>
-
-          <p>
-            Yes. The listed packages are designed around support
-            provided to an individual real estate professional.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Can my package change later?
-          </summary>
-
-          <p>
-            Yes. Your support requirements can change as your workload
-            changes. We can review the arrangement and adjust the
-            scope where appropriate.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Can I request custom work?
-          </summary>
-
-          <p>
-            Yes. Additional or specialised work can be discussed
-            depending on the requirements and workload involved.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Is there a contract?
-          </summary>
-
-          <p>
-            Support arrangements can be structured around an agreed
-            service period and scope of work. The specific terms will
-            be confirmed before work begins.
-          </p>
-        </details>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CTA -->
-
-  <section class="cta">
-
-    <div class="container">
-
-      <div class="eyebrow">
-        Let's Talk
-      </div>
-
-      <h2>
-        Ready to take some work off your plate?
-      </h2>
-
-      <p>
-        Tell us what you need help with and we'll help you find the
-        right support option.
-      </p>
 
       <a href="contact.html" class="btn">
-        Contact ZionFlow
+        Let's Talk
       </a>
 
     </div>
 
-  </section>
 
-</main>
-
-<footer>
-
-  <div class="container">
-
-    <strong>ZionFlow</strong>
-
-    <p>
-      Remote administrative and lead-support services for real estate
-      professionals across South Africa.
+    <p class="note">
+      Packages are starting prices and may be adjusted according to
+      property count, workload, service requirements and agreed scope.
+      Regulatory and property-practitioner requirements apply where relevant.
     </p>
 
   </div>
+
+</section>
+
+<footer>
+
+  <p>
+    <strong>ZionFlow</strong> — Real Estate Operations & Support
+  </p>
+
+  <p>
+    Helping real-estate professionals stay organised, responsive and moving forward.
+  </p>
 
 </footer>
 
 </body>
 </html>
-```
