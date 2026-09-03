@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zionflow Shop</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+  :root {
+    --white: #FFFFFF;
+    --surface: #F3F6FB;
+    --line: #E1E7F0;
+    --navy: #0B1D3A;
+    --text-muted: rgba(11, 29, 58, 0.65);
+    --text-faint: rgba(11, 29, 58, 0.42);
+    --blue: #1450C4;
+    --blue-deep: #0F3A94;
+    --sky: #2E8FEC;
+    --green: #1F9D55;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--navy);
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; margin: 0; color: var(--navy); }
+
+  /* ---- Hero ---- */
+  .hero { padding-top: 64px; }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 620px;
+  }
+
+  .eyebrow {
+    color: var(--blue);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+    line-height: 1.05;
+  }
+
+  .hero p {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  .primary-button {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 14px 26px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s ease;
+  }
+
+  .primary-button:hover { background: var(--blue-deep); }
+
+  .hero-note {
+    font-size: 0.88rem;
+    color: var(--text-faint);
+  }
+
+  .trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 36px;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 9px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .trust-item .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ---- Problem section ---- */
+  .problem-head { max-width: 560px; margin-bottom: 40px; }
+  .problem-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); line-height: 1.15; }
+  .problem-head p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-top: 12px; }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .problem-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blue);
+    padding: 22px 20px;
+  }
+
+  .problem-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .problem-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+
+  /* ---- Why us ---- */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .why-card { display: flex; flex-direction: column; gap: 8px; }
+  .why-card .mark { width: 30px; height: 3px; background: var(--sky); }
+  .why-card h3 { font-size: 1.05rem; }
+  .why-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+
+  /* ---- Featured product ---- */
+  .featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .featured-image {
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(160deg, #E7EEF9, #F3F6FB);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-faint);
+    font-size: 0.9rem;
+  }
+
+  .featured-body { display: flex; flex-direction: column; gap: 14px; }
+  .featured-tag {
+    color: var(--green);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .featured-body h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+  .featured-body p { color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+  .price-row { display: flex; align-items: baseline; gap: 10px; }
+  .price-was { font-size: 1rem; color: var(--text-faint); text-decoration: line-through; }
+  .price-now { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); }
+
+  @media (max-width: 700px) {
+    .featured { grid-template-columns: 1fr; }
+  }
+
+  /* ---- Product grid ---- */
+  .section-head { margin-bottom: 32px; }
+  .section-head h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 26px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .product-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 16px rgba(11, 29, 58, 0.08);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    z-index: 1;
+  }
+
+  .product-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(160deg, #E7EEF9, #F3F6FB);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-faint);
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .product-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+  .product-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.12rem; margin: 0; line-height: 1.3; color: var(--navy); }
+  .product-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0; flex: 1; }
+  .product-price-row { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
+  .product-price { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--navy); }
+  .product-footer { margin-top: 6px; }
+
+  .buy-button {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    transition: background 0.15s ease;
+  }
+
+  .buy-button:hover { background: var(--blue-deep); }
+
+  .buy-button:focus-visible, .primary-button:focus-visible {
+    outline: 2px solid var(--blue-deep);
+    outline-offset: 2px;
+  }
+
+  /* ---- Testimonials ---- */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 24px;
+  }
+
+  .testimonial-card p.quote {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+
+  .testimonial-name { font-size: 0.85rem; color: var(--blue); font-weight: 600; }
+  .placeholder-flag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    font-style: italic;
+  }
+
+  /* ---- FAQ ---- */
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--line); }
+  .faq-item h3 { font-size: 1rem; margin-bottom: 8px; }
+  .faq-item p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+  /* ---- Final CTA ---- */
+  .final-cta {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: var(--surface);
+  }
+  .final-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); max-width: 20ch; }
+  .final-cta p { color: var(--text-muted); max-width: 42ch; margin: 0; }
+
+  /* ---- Footer ---- */
+  footer {
+    padding: 32px 0 48px;
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  footer a { color: var(--blue); text-decoration: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .buy-button, .primary-button, .product-card { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Zionflow Shop</span>
+      <h1>Stay powered, no matter what Eskom does.</h1>
+      <p>Load shedding and home-office essentials, picked to actually get you through the outage — not just fill a cart.</p>
+      <div class="hero-cta">
+        <a class="primary-button" href="#products">Shop the range</a>
+        <span class="hero-note">Ships in 7–15 days · Order confirmed on WhatsApp</span>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-item"><span class="dot"></span>Secure payment via Yoco</div>
+        <div class="trust-item"><span class="dot"></span>Real tracking, every order</div>
+        <div class="trust-item"><span class="dot"></span>Real person on WhatsApp, not a bot</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section>
+  <div class="wrap">
+    <div class="problem-head">
+      <h2>You already know the drill.</h2>
+      <p>The stage changes, the lights go, and whatever you were doing has to stop. It's not just annoying — it costs you real time and money.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Work stops mid-task</h3>
+        <p>Laptop dies, router drops, deadline doesn't move. A dead battery shouldn't decide your day.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Big retailers, slow answers</h3>
+        <p>Generic support lines and no one to actually ask before you buy. You're on your own until it arrives — if it arrives right.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Cheap gear that gives up fast</h3>
+        <p>The market's full of once-off gadgets that die after a month. You need things built for daily, real use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why people order from Zionflow</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="mark"></span>
+        <h3>You talk to a real person</h3>
+        <p>Every order is confirmed on WhatsApp — ask questions before you pay, not after.</p>
+      </div>
+      <div class="why-card">
+        <span class="mark"></span>
+        <h3>Honest shipping times</h3>
+        <p>We tell you 7–15 days upfront. No fake "next day" promises we can't keep.</p>
+      </div>
+      <div class="why-card">
+        <span class="mark"></span>
+        <h3>Picked for load shedding, specifically</h3>
+        <p>Every product here solves one problem: keeping you running when the power doesn't.</p>
+      </div>
+      <div class="why-card">
+        <span class="mark"></span>
+        <h3>Secure payment, every time</h3>
+        <p>Checkout runs through Yoco — the same secure payment system used by thousands of South African businesses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED PRODUCT ================= -->
+<section>
+  <div class="wrap">
+    <div class="featured">
+      <div class="featured-image">Product photo here</div>
+      <div class="featured-body">
+        <span class="featured-tag">Most ordered this month</span>
+        <h2>10,000mAh Fast-Charge Power Bank</h2>
+        <p>Dual USB output, charges a phone 2–3 times on one full charge. Small enough for a bag or car cubby — the one thing worth keeping charged at all times.</p>
+        <div class="price-row">
+          <span class="price-was">R429</span>
+          <span class="price-now">R349</span>
+        </div>
+        <a class="primary-button" href="https://wa.me/27833110552?text=Hi%2C%20I%27d%20like%20to%20order%20the%2010%2C000mAh%20Fast-Charge%20Power%20Bank" target="_blank" rel="noopener">Order this on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCT GRID ================= -->
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The full range</h2>
+    </div>
+    <div class="product-grid">
+
+      <!-- ==== PRODUCT CARD TEMPLATE — duplicate for each product.
+           Remove .product-badge if not a bestseller/new item.
+           Remove .price-was span if there's no discount. ==== -->
+
+      <div class="product-card">
+        <span class="product-badge">Bestseller</span>
+        <div class="product-image">Product photo here</div>
+        <div class="product-body">
+          <h3 class="product-name">10,000mAh Fast-Charge Power Bank</h3>
+          <p class="product-desc">Dual USB output, charges a phone 2–3 times on one full charge.</p>
+          <div class="product-price-row">
+            <span class="price-was">R429</span>
+            <span class="product-price">R349</span>
+          </div>
+          <div class="product-footer">
+            <a class="buy-button" href="https://wa.me/27833110552?text=Hi%2C%20I%27d%20like%20to%20order%20the%2010%2C000mAh%20Fast-Charge%20Power%20Bank" target="_blank" rel="noopener">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Product photo here</div>
+        <div class="product-body">
+          <h3 class="product-name">Rechargeable LED Lantern</h3>
+          <p class="product-desc">Bright, unbreakable, and USB-rechargeable — no batteries to replace mid-outage.</p>
+          <div class="product-price-row">
+            <span class="product-price">R229</span>
+          </div>
+          <div class="product-footer">
+            <a class="buy-button" href="https://wa.me/27833110552?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Rechargeable%20LED%20Lantern" target="_blank" rel="noopener">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <span class="product-badge">New in</span>
+        <div class="product-image">Product photo here</div>
+        <div class="product-body">
+          <h3 class="product-name">Solar Garden &amp; Camp Light</h3>
+          <p class="product-desc">Charges in daylight, runs all night. No cables needed to recharge it.</p>
+          <div class="product-price-row">
+            <span class="product-price">R199</span>
+          </div>
+          <div class="product-footer">
+            <a class="buy-button" href="https://wa.me/27833110552?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Solar%20Garden%20%26%20Camp%20Light" target="_blank" rel="noopener">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Product photo here</div>
+        <div class="product-body">
+          <h3 class="product-name">Foldable Laptop Stand</h3>
+          <p class="product-desc">Raises your screen to eye level for proper work-from-home posture.</p>
+          <div class="product-price-row">
+            <span class="price-was">R329</span>
+            <span class="product-price">R279</span>
+          </div>
+          <div class="product-footer">
+            <a class="buy-button" href="https://wa.me/27833110552?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Foldable%20Laptop%20Stand" target="_blank" rel="noopener">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Product photo here</div>
+        <div class="product-body">
+          <h3 class="product-name">USB-C 4-Port Hub</h3>
+          <p class="product-desc">One cable, four ports. Works across phones, laptops, and tablets alike.</p>
+          <div class="product-price-row">
+            <span class="product-price">R249</span>
+          </div>
+          <div class="product-footer">
+            <a class="buy-button" href="https://wa.me/27833110552?text=Hi%2C%20I%27d%20like%20to%20order%20the%20USB-C%204-Port%20Hub" target="_blank" rel="noopener">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== END TEMPLATE ==== -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What customers say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="quote">"Replace this with a real quote from an actual customer once you have one — a screenshot of their WhatsApp message works well too."</p>
+        <span class="testimonial-name">— Customer name, area</span>
+        <br><span class="placeholder-flag">Placeholder — do not publish without a real review</span>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"Replace this with a real quote from an actual customer once you have one — a screenshot of their WhatsApp message works well too."</p>
+        <span class="testimonial-name">— Customer name, area</span>
+        <br><span class="placeholder-flag">Placeholder — do not publish without a real review</span>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"Replace this with a real quote from an actual customer once you have one — a screenshot of their WhatsApp message works well too."</p>
+        <span class="testimonial-name">— Customer name, area</span>
+        <br><span class="placeholder-flag">Placeholder — do not publish without a real review</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Before you order</h2>
+    </div>
+    <div class="faq-item">
+      <h3>How long does delivery take?</h3>
+      <p>Most orders arrive in 7–15 business days. You'll get a tracking number as soon as it ships, and updates come straight through WhatsApp.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is payment safe?</h3>
+      <p>Yes — all payments run through Yoco's secure checkout, the same system used by small businesses across South Africa. We never see or store your card details.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if something arrives damaged or wrong?</h3>
+      <p>Message us on WhatsApp with a photo and we'll sort out a replacement or refund. You're talking to a real person, not a ticket queue.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I order more than one item at a time?</h3>
+      <p>Yes — just mention everything you want in your WhatsApp message and we'll confirm one combined total before sending the payment link.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section>
+  <div class="wrap final-cta">
+    <h2>Don't let the next outage catch you unprepared.</h2>
+    <p>Pick what you need, message us on WhatsApp, and we'll take it from there.</p>
+    <a class="primary-button" href="#products">Shop the range</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; width:100%;">
+    <span>Zionflow</span>
+    <a href="https://wa.me/27833110552" target="_blank" rel="noopener">Message us on WhatsApp</a>
+  </div>
+</footer>
+
+</body>
+</html>
